@@ -1,0 +1,14 @@
+
+// higher order function : function which takes another function as parameter 
+// call back function : function which is passed as parameter 
+
+
+function x() {                                      // call back function 
+    console.log("this is call back function !");
+}
+
+function y(x) {              // higher order function 
+    x();
+}
+
+y(x);

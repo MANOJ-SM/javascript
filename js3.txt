@@ -1,0 +1,565 @@
+
+                                             Module : 3 
+ 
+
+whenever the javascript code runs , an exceuction context is created :
+
+global execution context : the execution context of entire script ;
+
+global execution context : 1.mmry llocation  2.code execution 
+
+code execution starts from assigning value to variables 
+
+
+call stack : a datastruture that keeps track of function calls 
+for function another local execution context is created and for that another local memory is also created.
+
+if the there are 2 prgms 1st one function will sit in call stack and it is executted and once after executed it removed from call stack and next function will come and sit in call stack 
+
+
+once all the lines of the code are executed , all the mmry will be erased 
+
+2nd function
+1st function 
+global execution context all three are poped out one by one after executing thir code 
+
+
+// anonymous function : function without thir own identity  are termed as anonymous function   // synatx error 
+
+
+only in function expression / arrow function we can declere anonymous function
+
+as a fun can be assined to a variable ;
+
+let a = () => {
+    console.log("3");
+}
+
+
+
+// Named Function Expression 
+
+let a = function manu() {
+    console.log("3");
+}
+
+a();
+
+manu();  //referenceError : manu is not defined ;
+
+cannont be called with named function bcoz it is a value to variable which is defined global scope.
+
+
+// first class function :
+
+
+function x() {
+    console.log("x is string ");
+
+}
+
+function y(x){
+    return x; 
+}
+
+const func = y(x);
+func();
+
+
+//first class function :  function can be treated as value , they can be passesed as arguments to anthore function 
+and can be returned by other functions 
+
+example :  // practice 
+
+function createGreeter(greeting) {
+    // Return a function that takes a name and logs a greeting message
+    return function greet(name) {
+        console.log(greeting, name,"!");
+    };
+}
+
+const greetMorning = createGreeter("Good morning");
+const greetAfternoon = createGreeter("Good afternoon");
+
+greetMorning("Alice");
+greetAfternoon("Diana");
+
+
+// immediately innovek functions 
+
+// - calling outside the function 
+
+function person(){
+    console.log("manu");
+}
+
+person();
+
+
+// self calling or immediately calling functions   // practice 
+
+(function person(){
+    console.log("manu");
+}) ();
+
+
+---------------------------------------
+
+// ----  scope 
+
+function outer() {
+    var x =10;
+    // console.log(y);
+    function inner(){
+        var y =20;
+        console.log(x);
+    }
+    inner();
+}
+
+
+outer();
+
+inspect > sources > referesh page to start execution add breakpoints see scope for global and local scope 
+
+
+lexical enviornment : mmry of parent  // aslso called closure
+
+scope chain : it is the chain of scopes thats determines variable access 
+
+the inner functions can access the outer space variable but outer cant acess inner variables 
+
+when the inner function is called it will put in the call stack and another local scope will be created and it will have access to , mmry of its parent mmry 
+
+every  memry allocation in execution context will have a lexical enviornment 
+
+scope chain : in the  global execution contect the every inner lexical env will be pointing to its parent mry and the parent mmry consist of lexical mmry which will be pointing to global execution context , and g e context will not have any lexical env (null)
+
+----------------
+
+
+ var a =10;  // global scopw wherever declred 
+
+ let and const  //  comes in script  if declred globally 
+
+ let and const  within any block // comes in block scope 
+
+ function  // local scope 
+
+all the variable declered using var will have global scope eventhougth they are declerd wthin a function block 
+
+// shadowing  practice 
+
+// -- closures ( lexical envirnment)
+
+a function with its lexical env is called closure
+
+function x() {
+    var a =10
+    function y() {
+        console.log(a);
+    }
+    
+    return y;
+}
+
+const z = x();
+console.log(z);
+z();
+
+
+
+when y() is called another local mmry is created for y() with the   lexical_env / closure   of function x ;
+
+
+
+function createCounter() {
+//     // Initialize count variable
+//     let count =1;
+//     function counter(){
+//         console.log(count);
+//         count+=1;
+//     }
+
+//     // Return a function that increments and logs the count
+
+//     return counter;
+    
+// }
+
+
+
+// function createAdder(x) {
+//     // Return a function that adds x to its argument y and returns the sum
+//     function sum(y){
+//         return x + y ;
+//     }
+    
+//     return sum;
+// }
+
+
+
+// // Create a counter and call it multiple times
+// const counter = createCounter();
+// counter(); // 1
+// counter(); // 2
+// counter(); // 3
+
+// // Create an adder and use it to add another number
+// const add5 = createAdder(5);
+// console.log(add5(3)); // 8
+// console.log(add5(10)); // 15
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------Array :
+
+array is used to store multiple values in one variable 
+
+always we use const to declare array , as the array varaiable will always be pointing to references rather then values of array 
+by that we can alter the values of the array with no contraints 
+
+array starts with 0 indexing 
+
+array is mutable 
+
+type of array is object 
+
+
+
+const fruits = [ "apple", "mango","gauva"];
+
+
+console.log(fruits[0]);
+
+console.log(fruits[-1]);  // undefined
+
+fruits[1] = "pinapple";
+
+fruits[3] = "straberry";
+
+console.log(fruits);
+
+for(fruit of fruits){
+    console.log(fruit);
+}
+
+const colors = [];
+
+colors[0] = "red";
+colors[1] = "grren";
+
+console.log(colors);
+
+
+----------------------------------------
+
+
+// another way to create array 
+
+// const arr = new Array(24,45,25);
+// console.log(arr);
+
+// const array1 = new Array(24);         //  creates 24 array elements which is bad and this tyoe array creation is not be used 
+// console.log(array1);
+
+const colors = ["red", "green", "yellow","blue","violte"];
+
+console.log(colors.length);
+
+// to access the last ele of array 
+
+console.log(colors.length -1);
+
+// toString  --  to convert arr ele to strings 
+
+console.log(colors.toString());
+
+let array2 = colors.toString();
+console.log(typeof(array2));
+
+// join   --  will do same job as toString but can join with any opertor in blw ele 
+
+let array3 = colors.join(" * ");
+console.log(array3);                   // red * green * yellow * blue * violte
+
+
+-------------------------------------
+
+// // at()        -- to access array ele 
+
+// //pop()        -- to pop last ele 
+
+// // push()      -- to push ele at last 
+
+
+
+// const colors = ["red", "green", "yellow","blue","violte"];
+
+// console.log(colors.at(1));   // (colors.at(1)  --> grren 
+
+
+// console.log(colors);
+
+
+// console.log(colors.pop());       // poped  last ele of array and returns the poped ele (violte) 
+
+// console.log(colors);
+
+// console.log(colors.push("violat"));    // pushed violate and returns new length of array 
+  
+// console.log(colors);
+
+
+// shifting 
+
+// shift()    -- pops ele in begining and returns it 
+
+const fruits = ["mango", "guva", "painaple","jfruit","straberry"];
+
+
+console.log(fruits);
+
+
+console.log(fruits.shift());   
+
+console.log(fruits);
+
+
+
+// unshift()    -- adds ele in begining and returns new array 
+
+let fruit = fruits.unshift("mango1");   
+
+console.log(fruits);
+
+
+console.log(fruit);
+
+---------------------
+
+// delete 
+
+const array = [1,2,3,4,5,6,7];
+  
+delete array[1];                    // index 1 ele will be deleted , and space will be reserved 
+
+console.log(array)                 // 1 ,<empty>,3,4,5,6,7
+
+
+//splice  ------------  mutable 
+
+const arr = [1,2,3,4,5,6,7];
+
+arr.splice(0,2)                      // (strating from index 0 , remove 2 elements )
+
+console.log(arr);                    // 3,4,5,6,7
+
+
+arr.splice(0,0,1,2);                 // ( starting from 0 index, remove 0 ele , add rest of this ele)
+
+console.log(arr);                    // 1,2,3,4,5,6,7
+
+
+// toSpliced --  is the updated version of splice which immutable  // wont alter the original array 
+
+// slice  ---- immutable 
+
+
+const arr2 = [ 1,2,3,4,5,6];
+
+const vrbl = arr2.slice(1)          // give the slice of array from index 1 to end index 
+
+
+console.log(vrbl);                   //  2,3,4,5,6
+
+
+const vbl2 = arr2.slice(2,4)        // give slice of array from index 2 to 3rd index leaving 4th index 
+
+console.log(vbl2);                  // 3,4
+
+-------------------------------------
+
+
+// // // array concatination 
+
+// // const arr1 = [1,2,3,4,5];
+// // const arr2 = [6,7,8,9,10];
+
+// // // const newArr = arr1 + arr2;
+
+// // const newArr = arr1.concat(arr2);
+
+// // const arr3 = ["a","b","c","d"];
+// // const arr4 = ["e","f","g","h"];
+
+
+// // const newArr1 = newArr.concat(arr3,arr4);
+
+// // console.log(newArr1);                          // 1,2,3,4,5,6,7,8,9,10,a,b,c,d,e,f,g,h
+
+
+// // // flat -- used to merge the the sub arrays in the main array     // immuatable 
+
+// // const arr5 = [ [1,2] , [3,4] , [5,6] ];
+
+// // const newArr5 = arr5.flat();
+
+// // console.log(newArr5);
+
+
+// // indexOf -- for searching an ele in an array , when we know the name but not location or index 
+
+// const colors = [ "red", "green" , "yellow" ];
+
+// console.log(colors.indexOf("yellow"));               // 2
+
+// console.log(colors.indexOf("blue"));               // if ele is not present in array it returns -1 
+
+
+
+// //lastIndexof  -- where the item is located at last time or in recent time 
+
+
+// const colors1 = [ "red", "green" , "yellow" ,"red", "pink" ];
+
+// const last = colors1.lastIndexOf("red");
+
+// console.log(last);                                                  // 3 
+
+// // includes -- determines whether the ele is presnt or not
+
+// console.log(colors1.includes("pink"));                               // true      
+
+
+-----------------------------------------------------
+
+
+sort()    - sorts array alphabetecally  // mutable 
+------------------------------------------------------
+const colors = [ "red", "green" , "yellow", "blue"];
+
+let colors1 = colors.sort();
+
+console.log(colors1);                           // blue, green,red,yellow
+
+console.log(colors);                           // blue, green,red,yellow
+
+
+
+toSorted  - sorts array alphabetecally  // immutable 
+--------------------------------------------------------
+
+const newColors = [ "red", "green" , "yellow", "blue"];
+
+let colors2 = colors.toSorted();
+
+console.log(colors2);                      // blue, green,red,yellow
+
+console.log(newColors);                    // "red", "green" , "yellow", "blue"
+
+
+reverse   ---------------- sort and reverse 
+
+const colors3 = [ "red", "green" , "yellow", "blue"];
+
+console.log(colors3);
+
+let colors4 = colors3.sort();
+
+console.log(colors4);  
+
+colors4 = colors4.reverse();
+
+console.log(colors4);  
+
+
+toReversed -- new array 
+
+const Array1 = [ "red", "green" , "yellow", "blue"];
+
+const reveresedArray = Array1.toReversed();              // not a function , something went went wrong 
+
+console.log(reveresedArray);                             // reversed new  array , immutable 
+
+
+array - sort - reverse 
+
+const cars = ["maruti", "i20", "tesla"]
+cars.sort();
+console.log(cars);
+cars.reverse();
+console.log(cars);                // cars.sort().reverse();
+
+
+
+to sort numerical values    //  arr.sort
+
+
+ const arr = [ 29, 25, 23];
+
+arr.sort();                    // if not woerked 
+
+console.log(arr);
+
+
+arr.sort(function(a,b)  { return  a - b } );      //    23,25,29     //  another way using function 
+
+
+arr.sort(function(a,b)  { return  b - a } );  //  will sort in dsecending order 
+
+     
+arr.reverse();                                    // 29,25,23
+
+console.log(arr);
+
+to retrive minimum and maximum ele in array 
+
+const arr1 = [ 29, 25, 23];
+arr1.sort();                           // sorted in ascending order 
+console.log(arr1[0]);                  // min ele is 23
+
+arr1.reverse();                        // sorted in descending order 
+console.log(arr1[0]);                  // max ele is 29
+
+another way to get min and max ele in array is pusing ele in math method
+
+let min= Math.min(2,5,7,8,3,1);
+console.log(min);
+
+let max = Math.max(2,5,7,8,3,1);
+console.log(max);
+
+--------------------------------------------------
+
+/*
+
+const fruits = ["mango","apple","pinapple"];
+
+
+
+1 ) for loop 
+
+for(let i=0; i<fruits.length; i++){
+    console.log(fruits[i]);
+}
+
+
+
+
+ 2) for of loop                // always preferd for  arrays                 
+
+for(let fruit of fruits){                           // here  (individual ele) fruit is the values of array 
+    console.log(fruit);
+}
+
+                               // not used that much 
+
+for(let indx in fruits){                             // here indx is the index of array elements 
+    console.log(fruits[fruit]);
+}
+
+*/

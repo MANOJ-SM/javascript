@@ -1,0 +1,453 @@
+
+// javascript fondation 
+
+
+node js : it is javascript runtime enivornment to run js outside browser 
+
+console : it is the api presented by js 
+
+variable can be declred with var , let , var , const 
+
+let x =0;
+x =7;
+
+const = 10 ;
+
+
+ES^6
+
+// variables can begin with leeters , $ , underscore and not with numbers 
+
+keyword cannont be declred as a variable ( " keywords are reserve words  ")
+
+-----------------------------------------------------------
+
+//  data types                                 
+
+the type of value the data is holding  
+
+primitive datatypes                      -- these are predefined by prog lang 
+
+ ex :
+
+                         let a = 10;
+
+             let b = a;                       // Now b holds its own copy of the value 10
+             b = 20;
+             console.log(a);                  // Output: 10
+             console.log(b);                  // Output: 20             
+
+ the original data is  not changed 
+
+
+
+1. number  ,  let x =  10;
+
+2. string  ,  let x = " internshala ";
+
+3. boolean ,  let x = true/false ;
+
+4. null    ,  let x = null;
+
+5. undefined ,  let x ;
+
+6. BigInt , let x = BigInt (36178581783671456564345)                // to store big integer value 
+
+7. Symbol , let x = Symbol("756wjkb891")                            // to store uniue value 
+
+
+// 1 non - primitive data type                       -- these are created by programmer 
+
+
+   ex : array stoeres the memmory address of the data insted of actual data .   
+        to use data in array they must be declered in some variable at some memmory then it possible to 
+        store their address in array 
+
+        if you copy array to an another array both the array will be pointing to same array not two different arrays are genereted.
+
+        ex:
+                let arr1 = [1, 2, 3];
+                
+        let arr2 = arr1;          // arr2 now points to the same array
+        arr2.push(4);             // Modify the array
+        console.log(arr1);        // Output: [1, 2, 3, 4] because arr1 and arr2 are referencing the same array
+        console.log(arr2);        // Output: [1, 2, 3, 4]        
+
+        the original dat is changed 
+
+
+8. object , 
+
+const user = {
+    name : "manoj";
+    age : 21;                                                        // to store key value pair type of values 
+}
+
+
+//  the data type of an array is also a object 
+ 
+* array 
+
+const fruits = ["mango" , "apple" , "banana"];                   // to store mulitple values in one variable      
+
+-------------------------------------------------------------------------------------------------------
+
+// operators 
+
+1. arithematic operators   
+2. assignment operators 
+3. comparision operators
+4. logical operators 
+5. conditional operators 
+
+1.arithematic operators :
+
+let a = 2 ;
+let b = 2 ;
+
+let sum = a + b ;
+
+let diff = a - b;
+
+let mul = a * b;
+
+let expo = a ** b;
+ 
+console.log("sum" , sum);
+
+
+
+let div = a / b;         example :               15 / 3 -->   3 |15 | 5    here quotient 5 is the answer 
+                                                                 15
+                                                                 0
+
+
+let mod = a % b ;        example :               15 % 3  -->  3 |15 | 5
+                                                                 15
+                                                                 0         here reminder 0 is the answer 
+
+                                                
+                                                 10 % 20 -->       0
+                                                                  ______
+                                                               20 | 10
+                                                                  - 0
+                                                                  ------
+                                                                    10
+
+    pheli wali no andar jayegi  
+
+
+post increment and pre increment 
+
+let num1 = 30
+
+console.log(num1++);  // 30
+console.log(num1);    // 31
+
+
+let x = 20;
+
+console.log(++x);  // 21
+
+
+// Assignment  operators 
+
+
+= -->  with arithematic operators        + , - , * ,  / , % , **
+
+let a = 10;
+let b = 20;        // = eqalls to
+
+
+a+=b;                                         // a = a + b                             a = 30
+a-=b;                                         //  -10 = 10 -20                         a = -10
+a*=b;                                         //  -200 = -10 *20                       a = -200
+a/=b;                                         //     -10 = -200/20                     a = -10
+console.log("modulus", a**=b);                 //    -10 =  -10 % 20                   a = -10
+a**=b;                                         //   100000(20 0's) =  -10^20           a =  1 and 20 0's
+
+-------------------------------------------------------------------------------------------------
+
+// comparision operators 
+
+= with comparision operators      > , < , <=, >= , == , === 
+
+answer will be in boolean value 
+
+
+
+let age =20;
+
+let adult_age = age > 18
+
+console.log("adult",adult_age);
+
+---------------------------------------------;
+
+// > , < , <= , >= 
+
+let x = 10;
+let y = 30;
+
+let isXlessTheny = x < y;
+
+console.log("isXlessTheny",isXlessTheny);
+
+
+// == ,     === ( equalls to and type )
+
+let a = 30;
+let b=BigInt(30);
+
+let same = a===b;
+console.log("same",same);
+
+console.log(0 == false );          // true 
+
+// != , !==
+
+let a = 30;
+let b=BigInt(30);
+
+let same = a!=b;
+console.log("same",same);
+
+---------------------------------------------------------------------
+
+// logical operators      && , || , !=
+
+
+let x = 40;
+let y = 90;
+
+console.log( x > 30 && y > 80);    if both true -->  true 
+
+console.log( x > 60 || y > 100 );  if atleast one true --> true 
+
+console.log(!(x != 9));  // true --> false 
+
+// type operetor 
+
+console.log(typeof(x));
+
+// ternary operator   for if else condition  
+
+let age = 20;
+
+age > 18 ? console.log("adult") : console.log("not adult");
+
+        ( ? true) -> result (: false) -> result 
+--------------------------------------------------------------------------------------------------
+
+--------------------   conversion of  number to string 
+
+
+let age = 20;
+let fullName = " manu";
+
+let sum = age + fullName;
+
+console.log("age with name : " ,sum)
+
+ 5 + "5" --> 55    bagalme betega 
+
+ 5 - "5" --> 0     sub opertaion hoga
+
+ 10 / "2" --> 5    div opertaion hoga
+
+
+ // integer or not 
+
+ 
+function isInt(num) {
+      return Number.isInteger(num);
+      
+}
+
+
+console.log(isInt(12));
+
+----------------------------------------------------------------------------------------------------------
+
+
+// conditional statements ,   if , else , else if , switch 
+
+
+1)
+
+let num = 46;
+
+if(num >0){
+    console.log("number is positive );
+}else {
+    console.log("number is negative)
+}
+
+
+
+
+2)
+
+let marks = 75;
+
+let grade;
+
+
+if(marks > 90 ){
+    grade = "A"
+} else if(marks > 80 && marks >= 90){
+    grade ="B"
+}else if(marks > 70 && marks <= 80){
+    grade = "C"
+}else {
+    grade = "F"
+}
+
+console.log("grade",grade);
+
+------------------------------------------------
+// switch statement 
+
+let dayNumber = 7;
+
+let day ;
+
+
+let msg ;
+
+switch(dayNumber){
+    case 0 :
+        day = "sunday";
+        break;
+
+    case 1 :
+        day = "monday";
+        break;
+
+    case 2 :
+        day = "tuesday";
+        break;
+
+    case 3 :
+        day = "wednesday";
+        break;
+        
+    case 4 :
+        day = "thursday";
+        break;
+    
+    case 5 :
+        day = "friday";
+        break; 
+        
+    case 6 :
+        day = "saturday";
+        break;  
+        
+    default :
+         msg = "please provide vailid day number";     
+
+}
+
+
+if(msg){
+    console.log("Message: ", msg);
+}else {
+    console.log("the day of the week is :" , day);
+}
+
+
+------------------------------------------------------------------------------------------------------------
+
+// loops 
+
+
+
+   (value initaialize , stopping condition , increment )
+
+// ----------------------  for loop 
+
+ittreates fixed no of times 
+
+for(i=1; i<=100; i++){
+    console.log(i);
+}
+
+
+// --------------------- for in loop 
+
+for in loop is used whenever we want to itrete throuh keys of an object we use for in loop
+
+const user = { akash : 56,  ramesh : 67,  satish : 67 }
+
+for( key in user){
+    console.log(user[key]);                     // 56 67 67
+}
+
+// --------------------for of loop 
+
+whenevr you want to itreate throuh array 
+
+const fruits = [ "apple" , "banana", "mango"];
+
+for( fruit of fruits){
+    console.log(fruit);                             // 
+}
+
+
+// -----------------  while loop 
+
+while loop : executes code as long as condition is true 
+
+let value = 1
+
+while(value<=10){
+    console.log(value);
+    value++;
+}
+
+// --------------------- do while loop 
+
+do while loop 
+
+let value = 1;
+
+do {
+    console.log(value);
+    value++;
+}while( value<= 10);
+
+
+// functions 
+
+
+functions are block of code which perform some specific tasks 
+the encorge code reusibility for similiar kind of tasks 
+
+1)
+
+function hello(){
+    console.log("hello world");
+}
+
+hello();
+
+you can print something using function 
+
+2)
+
+function sum( x,y) {
+    return x + y ;
+   
+}
+
+const result = sum(8,4);
+console.log(result);
+
+you can return something using function which you can use wherever you want :
+
+you write a function with return 
+call that function 
+
+what happens is a function will perform the task and returns the result of the function  to the function call , back and 
+you store that function call result in some variable and print whener you want.
