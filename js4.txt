@@ -12,3 +12,70 @@ function y(x) {              // higher order function
 }
 
 y(x);
+
+
+//-------------------------------------------------
+
+
+map function --  higher Order function which is used to transform the contents of array 
+
+map methode works on arrays  and returns the new array , immutable 
+
+map() transforms each array ele acc to the given function 
+
+map() methode is used to create new array with trannsformed array s
+
+const arr = [1,2,3,4,5,6];
+
+square of arr -> 1,4,9,16,25,36
+
+function square(x){              // take 
+    return x * x;
+}
+
+const SquaredArray = arr.map(square);
+console.log(SquaredArray);
+console.log(arr);
+
+
+-- double of a arr -> 2,4,6,8,10,12
+
+function double(x){
+    return 2 * x;
+}
+
+const DoubledArray = arr.map(double);
+console.log(DoubledArray);
+
+
+---- same above can be written 
+
+const DoubledArray = arr.map(function double(x){ return 2 * x; });
+console.log(DoubledArray);
+
+----- same above in arrow function 
+
+const DoubledArray = arr.map(x => { return 2 * x });          // input => { 
+console.log(DoubledArray);
+                                                              take each value (x) of array ata time  
+
+hello = () => {
+    return "Hello World!";
+  }
+
+
+const users = [ {                       // array of object 
+    fname : "alice",
+    lname : "jerry",
+},
+
+{
+    fname : "bob",
+    lname : "gorgy",
+
+}];
+
+const eachUsers = users.map(user => user.fname);           // each value of array => task 
+console.log(eachUsers);                                    // users.map() -> HOF
+                                                           // user => user.fname -> call back function 
+
