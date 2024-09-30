@@ -3,6 +3,11 @@
 // call back function : function which is passed as parameter 
 
 
+// higher order functions :
+1.map 
+2.filter 
+3.reduce
+
 function x() {                                      // call back function 
     console.log("this is call back function !");
 }
@@ -16,6 +21,7 @@ y(x);
 
 //-------------------------------------------------
 
+//1 map()
 
 map function --  higher Order function which is used to transform the contents of array 
 
@@ -99,7 +105,7 @@ console.log(eachUser);
 //When users.map is called, it passes each object (one at a time) from the users array to the callback function. The parameter user is used to refer to the current object being processed.
 
 
-// filter  -- array methode 
+// 2.filter  -- array methode 
 
 filter out the array ele based on sepecific conditions 
 will not modify original array insted return new array 
@@ -119,6 +125,117 @@ const arr = [ 1,2,3,4,5,6,7,8];
 // });
 
 const newarr = arr.filter(ele => ele %2 ==0 );
-
-
 console.log(newarr);
+
+
+// example : filter out students who are having marks > 50
+
+const students = [
+    {
+        "fname" : "manu",
+        "marks" : "89",
+    },
+    {
+        "fname" : "alice",
+        "marks" : "45",
+    },
+    {
+        "fname" : "bob",
+        "marks" : "77",
+    },
+    {
+        "fname" : "satya",
+        "marks" : "90",
+    },
+
+
+]
+
+const Mark50 = students.filter(student => student.marks > 50 );
+
+console.log(Mark50);
+
+--------------------------------------------
+
+// 3.reduce 
+
+
+// it will give result of array of values in one variable 
+// returns operations performed on arr ele in one variable effeciently 
+
+// example : normal sum of array 
+
+// const sum = [1,2,3,4,5,6,7];
+
+// let result = 0;
+
+// for(let i=0; i<sum.length; i++){
+//     result = result + sum[i];
+// }
+
+// console.log(result);
+
+//---  using reduce methode in normal function 
+
+// const arr = [1,2,3,4,5,6,7];
+
+// const result = arr.reduce(function(acc,cur){
+//     acc = acc + cur;
+//     return acc;
+// } ,0);
+
+// console.log(result);
+
+// ---- using reduce methode in normal function 
+
+// const arr = [1,2,3,4,5,6,7];
+
+// const result = arr.reduce( (acc,cur) => {  return acc = acc + cur } , 0);
+
+// console.log(result);
+
+
+// example : to print maximum of array ele's 
+
+// iterete through each ele
+// set one max ele at 0 index
+// compare max one with each other 
+// if maximum , make that max ele 
+
+// const arr = [1,2,3,4,5,6,7];
+
+// let max = arr[0];
+
+// for(let i=1; i<arr.length; i++){
+//     if(arr[i] > max){
+//         max = arr[i];
+//     }
+// }
+
+// console.log(max);
+
+// normal function 
+
+// const arr = [1,2,3,4,5,6,7];
+
+// const result = arr.reduce((acc,cur) => {
+//           if( cur > acc ) {
+//             acc = cur ;
+//             return acc;
+//           }
+//  } , 0);
+
+//  console.log(result);
+
+// arrow function 
+
+// const arr = [1,2,3,4,5,6,7];
+
+// const result = arr.reduce( (max,cur) => {           // max = acc 
+//     if(cur>max){
+//         max = cur;
+//         return acc;
+//     }
+// },0);
+
+// console.log(result);
