@@ -75,7 +75,50 @@ const users = [ {                       // array of object
 
 }];
 
+// arrow function 
+
 const eachUsers = users.map(user => user.fname);           // each value of array => task 
 console.log(eachUsers);                                    // users.map() -> HOF
+    
+    
+//normal function 
                                                            // user => user.fname -> call back function 
+const eachUser = users.map(function(user) {
+    return user.fname;
+});
 
+console.log(eachUser);
+
+
+
+// const eachUser = users.map(user => user.fname);           // each value of array => task 
+// console.log(eachUser);
+
+//Inside the callback function, user is the parameter that refers to each individual element (object) in the users array.
+
+//When users.map is called, it passes each object (one at a time) from the users array to the callback function. The parameter user is used to refer to the current object being processed.
+
+
+// filter  -- array methode 
+
+filter out the array ele based on sepecific conditions 
+will not modify original array insted return new array 
+
+//diff map b/w filter
+
+map methode traverese the arrray and  transforms(changing) each array ele acc to the given function 
+
+while filter traverse the array ,  it checks througth arr ele , if the arr ele req acc to function condition exists then it returns the filtered arr ele 
+
+//example :
+
+const arr = [ 1,2,3,4,5,6,7,8];
+
+// const newarr = arr.filter(function(ele){
+//     return ele % 2 == 0;
+// });
+
+const newarr = arr.filter(ele => ele %2 ==0 );
+
+
+console.log(newarr);
