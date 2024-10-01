@@ -288,3 +288,28 @@ console.log(marks_above_60);
 
 const totalMarksabove60 = marks_above_60.reduce( (sum,val) => sum += val.marks ,0);
 console.log(totalMarksabove60);
+
+
+---------------------------------------------------------------------------------------
+
+// every() 
+
+// every() - HOF checks  every array ele ,if every ele satisfy the condition it return true otherwise returns false 
+
+// check every person in the array is adult or not 
+
+const ages = [ 3,42,12,23,14,26];
+
+const checkAges = ages.every( age => age >= 18 );    
+                                                                   
+console.log(checkAges);
+
+// some() 
+
+// HOF checks every array ele , even if one ele satisfy the condition then it returns true 
+
+const ages = [ 3,42,12,23,14,26];
+
+const checkAges = ages.some( age => age >= 18 );    
+                                                                   
+console.log(checkAges);
