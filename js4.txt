@@ -370,3 +370,21 @@ console.log(checkAges);               // true    / bcoz - 43,23,26 > 18
 // console.log(findLastIndexOfele);                                         // 3
 
 ----------------------------------------------------------------------------------------------
+
+// example : 
+
+Create a function named findNegative that finds the first negative number in an array using Array find(). If negative number exists, it should print -1 else print all the elements of the array.
+
+function findNegative(arr) {
+	// write your code here
+	const negVal = arr.find( ele => ele < 0 )
+    //
+    
+    if (negVal < 0) {
+        console.log("-1");
+    }else{
+        console.log(arr)
+    }
+}
+const Array = [1, 2, 3, 4, 5];                   // -5 removed - // arr values
+findNegative(Array);   
