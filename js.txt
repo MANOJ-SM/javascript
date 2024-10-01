@@ -16,7 +16,7 @@ const = 10 ;
 
 ES^6
 
-// variables can begin with leeters , $ , underscore and not with numbers 
+// variables can begin with leters , $ , underscore and not with numbers 
 
 keyword cannont be declred as a variable ( " keywords are reserve words  ")
 
@@ -30,7 +30,7 @@ primitive datatypes                      -- these are predefined by prog lang
 
  ex :
 
-                         let a = 10;
+             let a = 10;
 
              let b = a;                       // Now b holds its own copy of the value 10
              b = 20;
@@ -58,10 +58,7 @@ primitive datatypes                      -- these are predefined by prog lang
 
 // 1 non - primitive data type                       -- these are created by programmer 
 
-
-   ex : array stoeres the memmory address of the data insted of actual data .   
-        to use data in array they must be declered in some variable at some memmory then it possible to 
-        store their address in array 
+    1. Array : stores the multiple values in one variable which can be of different kinds of data type , and it is # mutable 
 
         if you copy array to an another array both the array will be pointing to same array not two different arrays are genereted.
 
@@ -73,10 +70,10 @@ primitive datatypes                      -- these are predefined by prog lang
         console.log(arr1);        // Output: [1, 2, 3, 4] because arr1 and arr2 are referencing the same array
         console.log(arr2);        // Output: [1, 2, 3, 4]        
 
-        the original dat is changed 
+        the original data is changed 
 
 
-8. object , 
+    2. Object , 
 
 const user = {
     name : "manoj";
@@ -85,10 +82,6 @@ const user = {
 
 
 //  the data type of an array is also a object 
- 
-* array 
-
-const fruits = ["mango" , "apple" , "banana"];                   // to store mulitple values in one variable      
 
 -------------------------------------------------------------------------------------------------------
 
@@ -153,7 +146,7 @@ console.log(++x);  // 21
 // Assignment  operators 
 
 
-= -->  with arithematic operators        + , - , * ,  / , % , **
+= -->  with arithematic operators        += , -= , *= ,  /= , % , **=
 
 let a = 10;
 let b = 20;        // = eqalls to
@@ -418,7 +411,7 @@ do {
 }while( value<= 10);
 
 
-// functions 
+// ---------------------------------------------------------  functions 
 
 
 functions are block of code which perform some specific tasks 
