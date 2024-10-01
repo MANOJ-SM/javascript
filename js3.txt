@@ -1,5 +1,5 @@
 
-                                             Module : 3 
+                                             Module : 3 , 3rd chapter    
  
 
 whenever the javascript code runs , an exceuction context is created :
@@ -43,7 +43,7 @@ let a = function manu() {
     console.log("3");
 }
 
-a();
+a();        // 3
 
 manu();  //referenceError : manu is not defined ;
 
@@ -138,7 +138,7 @@ scope chain : in the  global execution contect the every inner lexical env will 
 ----------------
 
 
- var a =10;  // global scopw wherever declred 
+ var a =10;  // global scop wherever declred 
 
  let and const  //  comes in script  if declred globally 
 
