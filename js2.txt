@@ -1,4 +1,3 @@
-reding@7:42 pm 
 
 // core concepts 
 
@@ -90,7 +89,7 @@ const result = sum( );     // 20
 
 const result = sum(2,3);   // 5
 
-const result = sum(3);      // Nan 
+const result = sum(3);      // 13 
 
 console.log(result);           
 
@@ -106,9 +105,9 @@ all the parameter values are collected in one variable
 // apart from specified , rest of the parameter values are collected in one variable 
 
 
-function sumOfAllNum(...args){              
-    let sum = 0;
-    for(let value of args){
+function sumOfAllNum(...args){                    //  ...  3 dots 
+    let sum = 0;                                  // when there are multiple argument val's are there then they are difficult to 
+    for(let value of args){                          to pass as parameters , in that rest parameters are used 
         sum = sum + value;
     }
     return sum;
@@ -146,7 +145,7 @@ if u dont want some index values in array not be run
 
 // -- spread syntax 
 
-(...) -> spread operator 
+(...) -> spread operator                // array elements  in one arument val
 
 can pass array values as arguments  
 
@@ -177,9 +176,9 @@ console.log(result);                                     // 3
 3. string.split(" ") or split(" , ");
 4. string.trim()  / trimStart() / trimEnd();                // for extra wide spaces rempval from start and end.
 5. string.conact 
-6. string.charAt  - not used / at - used / charCodeAt -> gives asciee value of char
-7. string.slice   
-8. string.substring  - is not used 
+6. string.charAt  - not used / at - used / charCodeAt -> gives asciee value of char     // to get the character at that index 
+7. string.slice                          // (-4 , 6)
+8. string.substring  - is not used       // (4 , 6 )
 
 
 
@@ -313,7 +312,7 @@ console.log(sliceText3);
 // substr - deprecated  , means it is not used much in js 
 
 
-let sliceText4 = text.substr(2,3);          // 0 is index and 4 is upto lenth of string / manoj medleri / no  
+let sliceText4 = text.substr(3,4);          // 0 is index and 4 is upto lenth of string where at index begins from / manoj medleri / oj m  
         
 console.log(sliceText4);
 
@@ -387,7 +386,7 @@ const result = sum(2,4);
 console.log(result);
 
 
-* function keyword is used and in arrow function keyword is not used and a const keyword is iused to declear variable in which function can be stored.
+* function keyword is used and in arrow function keyword is not used and a const keyword is used to declear variable in which function can be stored.
 
 
 
@@ -436,7 +435,7 @@ console.log(result);
 
 
 // test example 
-
+ 
 let person = {
     firstName: `Ryan`,
     lastName: `Christiani`,
