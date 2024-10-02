@@ -333,12 +333,12 @@ console.log(checkAges);               // true    / bcoz - 43,23,26 > 18
 // array search methodes 
 
 
-// find - returns the first ele in the array that satisy the condition 
+// find - // finds the first ele in array //  returns the first ele in the array that satisy the condition 
 
 // const arr = [1,2,3,4];
 
 // const is_even = arr.find(ele => ele % 2 ==0);
-// console.log(is_even );                              // 2
+// console.log(is_even);                              // 2
 
 //----------------------------------------------------------------------------
 
