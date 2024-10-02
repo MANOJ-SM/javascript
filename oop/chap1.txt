@@ -2,6 +2,8 @@
 
 object : key-value pair  //  collection of properties and methods 
 
+// inside the object , key will be a variable as usual but value can be anything -> string , array , number , function or anything 
+
 class : 
 
 properties : characterstics or attributes of object 
@@ -94,4 +96,82 @@ const user = {
 
 console.log(user.names);         // array of names 
 user.greet();                     // greet user 
+
+------------------------------------------------------------------
+
+const user = {
+    names : {
+        "fname" : "manu",
+        "lanme" : medleri",
+
+    },             // name , age, printDetails,greet --> properties of object user 
+    age : 23,
+    printDetails : function () {
+        console.log("Details of User");
+    },
+    greet : function(){                           // printDetail & grade -> methods 
+        console.log("greet user")
+    }
+};
+
+console.log(user.names.fname);         // manu  
+
+----------------------------------------------------------------
+
+accesing obj with [ ]                //  sometime usefull 
+--------------------
+
+function logSomething(property){
+    console.log(user.property);   // vlue will not transform    // error 
+
+    console.log(user[property]);  //  user["age"]   // 52 
+}
+
+logSomething("age");
+
+---------------------------------------------------------------
+
+//  updating propeties and seting new properties
+
+
+const user = {
+    names : {
+        "fname" : "manu",
+        "lanme" : "medleri",
+
+    },             // name , age, printDetails,greet --> properties of object user 
+    age : 23,
+    printDetails : function () {
+        console.log("Details of User");
+    },
+    greet : function(){                           // printDetail & grade -> methods 
+        console.log("greet user")
+    }
+};
+
+
+// updating the values 
+
+user.names.fname = "alice";
+user["names"]["fname"] = "bob";
+
+console.log(user.names.fname);
+
+user.age = 34;
+
+console.log(user.age);
+
+// adding  or setting new properties 
+
+user.hobbies = ["playing", "music"];
+
+console.log(user.hobbies);
+
+user.farewell = function (){
+    console.log("good bye");
+}
+
+console.log(user);
+
+user.farewell();
 
