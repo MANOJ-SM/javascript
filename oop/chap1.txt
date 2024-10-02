@@ -1,6 +1,6 @@
 
 
-object : key : value pair
+object : key-value pair  //  collection of properties and methods 
 
 class : 
 
@@ -8,4 +8,90 @@ properties : characterstics or attributes of object
 
 methods :  actions / functions that object can perform 
 
+// any function you write inside an object is called method 
+
+both properties and methods are defined in the class 
+
+Prototype Chain:
+
+ Every JavaScript object has a prototype, which is another object from which it can inherit properties and methods
+
+JavaScript first checks the object itself. If it doesn't find it, it looks at the object's prototype. This process continues up the prototype chain until the property or method is found or the end of the chain is reached (null).
+
+
+a constructor:  is used to create multiple objects 
+
+inheritence : inherting the properties of the of the parent 
+
+encapsulation : having all properties and methodes  / function in one class we call this as encapsulation
+
+polymorphism : it allows objects to be treated as instances of their parent class
+
+-------------------------------------------------------------------------
+
+class person {
+    constructor(name,age) {
+        this.name = name;
+        this.age =age;
+
+    }
+
+
+greet() {
+    console.log(`hello my name is ${this.name} and my age is ${this.age}`);
+}
+
+}
+
+--------------------------------------------------------------------------
+
+class student extends person {
+    constructor(name,age,grade){           // constructor:  involves all objects inside the current class 
+        super(name,age)                    // super : ivolves object (properties /variables) inherited from super class to this subclass
+        this.grade = grade;
+    }
+
+                                           // method which is not working right now 
+    study (){                                              
+            console.log(`hello my name is ${this.name} is studying `);
+    }
+}
+
+---------------------------------------------------------------------
+
+// object literal // empty object 
+
+const user = {};
+
+-----------------------
+
+const user = {
+    names : [ "alice" ,"bob"],             // name , age, printDetails,greet --> properties of object user 
+    age : 23,
+    printDetails : function () {
+        console.log("Details of User");
+    },
+    greet : function(){                           // printDetail & grade -> methods 
+        console.log("greet user")
+    }
+};
+
+----------------------------------------------
+
+// we can access any properties  and methods of object with ( . ) operator 
+
+
+const user = {
+    names : [ "alice" ,"bob"],             // name , age, printDetails,greet --> properties of object user 
+    age : 23,
+    printDetails : function () {
+        console.log("Details of User");
+    },
+    greet : function(){                           // printDetail & grade -> methods 
+        console.log("greet user")
+    }
+};
+
+console.log(user.names);         // array of names 
+user.greet();                     // greet user 
 
