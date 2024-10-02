@@ -1,4 +1,10 @@
 
+                          chapter 1 : classes and objects 
+
+oop : representing the essential features of the object 
+
+-------------------
+
 data struture : we use data struture to store values , differnt data struture for different way of storing the values 
 
 example :
@@ -22,11 +28,43 @@ class :
 
 properties : characterstics or attributes of object 
 
+
+object is an instance of a class 
+---------------------------------
+
+Class as a Blueprint: A class defines the structure and behavior that objects created from it will have. It contains properties (data) and methods (functions) that define what the objects can hold and do. However, a class by itself is just a template and doesn't hold actual data until an object is created.
+
+Object as an Instance: When we create an object from a class, we are making a specific realization (or instance) of that class. The object has its own set of values for the properties defined by the class and can use the methods defined in the class.
+
+---- example :
+
+class Car {
+    constructor(make, model) {
+        this.make = make;                          class :  basic struture  // blueprint 
+        this.model = model;
+    }
+
+    start() {
+        console.log(`${this.make} ${this.model} is starting.`);
+    }
+}
+
+// Creating an object (instance) of the class 'Car'                 // using that struture to buid our needs 
+
+const myCar = new Car('Toyota', 'Corolla');
+
+myCar.start();                                          // Outputs: Toyota Corolla is starting.
+
+-------------------------------------------------
+
 methods :  actions / functions that object can perform 
 
 // any function you write inside an object is called method 
 
 both properties and methods are defined in the class 
+
+
+------------------------------------------------------
 
 Prototype Chain:
 
@@ -34,14 +72,29 @@ Prototype Chain:
 
 JavaScript first checks the object itself. If it doesn't find it, it looks at the object's prototype. This process continues up the prototype chain until the property or method is found or the end of the chain is reached (null).
 
+--------------------------------------------------------------
 
 a constructor:  is used to create multiple objects 
 
+--------------------------------------------------------------------
 inheritence : inherting the properties of the of the parent 
+
+--------------------------------------------------------------------
+
 
 encapsulation : having all properties and methodes  / function in one class we call this as encapsulation
 
+
+// bundling of data and methods in  single unit 
+--------------------------------------------------------------------
+
 polymorphism : it allows objects to be treated as instances of their parent class
+
+// ability of a single method to peroform different actions based on the object , it is called on 
+
+//example :
+
+person as - student / son / volunteer / bussinessman 
 
 -------------------------------------------------------------------------
 
@@ -132,7 +185,7 @@ console.log(user.names.fname);         // manu
 
 ----------------------------------------------------------------
 
-accesing obj with [ ]                //  sometime usefull 
+accesing obj with [ ]                //   usefull for dyanamic names 
 --------------------
 
 function logSomething(property){
