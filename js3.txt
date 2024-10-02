@@ -152,6 +152,9 @@ all the variable declered using var will have global scope eventhougth they are 
 
 // -- closures ( lexical envirnment)
 
+-- A function y is defined inside the function x. This is a nested function.
+In the body of y, console.log(a) logs the value of a to the console. Since a is not defined within y, it looks for the variable a in its outer scope, which is in the x function. This concept is called closure.
+
 a function with its lexical env is called closure
 
 function x() {
@@ -166,6 +169,8 @@ function x() {
 const z = x();
 console.log(z);
 z();
+
+  here z(); - This invokes the function z (which is the y function returned by x). When z (or y) is invoked, it logs the value of a (which is 10) to the console, as it still has access to a through the closure.
 
 
 
@@ -235,7 +240,8 @@ const fruits = [ "apple", "mango","gauva"];
 
 console.log(fruits[0]);
 
-console.log(fruits[-1]);  // undefined
+console.log(fruits[-1]);  // undefined        //  console.log(fruits.length -1);
+
 
 fruits[1] = "pinapple";
 
@@ -316,7 +322,7 @@ console.log(array3);                   // red * green * yellow * blue * violte
 
 // shifting 
 
-// shift()    -- pops ele in begining and returns it 
+// shift()    -- // pop at begning  , pops ele in begining and returns it 
 
 const fruits = ["mango", "guva", "painaple","jfruit","straberry"];
 
@@ -330,7 +336,7 @@ console.log(fruits);
 
 
 
-// unshift()    -- adds ele in begining and returns new array 
+// unshift()    --  push at begning , adds ele in begining and returns new array 
 
 let fruit = fruits.unshift("mango1");   
 
@@ -350,7 +356,7 @@ delete array[1];                    // index 1 ele will be deleted , and space w
 console.log(array)                 // 1 ,<empty>,3,4,5,6,7
 
 
-//splice  ------------  mutable 
+//splice  -----------  // splice =  ele delete or add  -  mutable 
 
 const arr = [1,2,3,4,5,6,7];
 
@@ -361,12 +367,14 @@ console.log(arr);                    // 3,4,5,6,7
 
 arr.splice(0,0,1,2);                 // ( starting from 0 index, remove 0 ele , add rest of this ele)
 
-console.log(arr);                    // 1,2,3,4,5,6,7
+console.log(arr);                    // 1,2,3,4,5,6,7   // where 1 and 2 are newly added 
 
 
 // toSpliced --  is the updated version of splice which immutable  // wont alter the original array 
 
-// slice  ---- immutable 
+-------------------------------------------------
+
+// slice  ----///  give the slice of array -----  immutable --  arr.slice(start,end);
 
 
 const arr2 = [ 1,2,3,4,5,6];
@@ -402,7 +410,7 @@ console.log(vbl2);                  // 3,4
 // // console.log(newArr1);                          // 1,2,3,4,5,6,7,8,9,10,a,b,c,d,e,f,g,h
 
 
-// // // flat -- used to merge the the sub arrays in the main array     // immuatable 
+// // // flat --  // flattend sub array //   immuatable   // used to merge the the sub arrays in the main array     
 
 // // const arr5 = [ [1,2] , [3,4] , [5,6] ];
 
@@ -506,7 +514,7 @@ arr.sort();                    // if not woerked
 console.log(arr);
 
 
-arr.sort(function(a,b)  { return  a - b } );      //    23,25,29     //  another way using function 
+arr.sort(function(a,b)  { return  a - b } );      //   by comparing 2 ele aside -   23,25,29     //  another way using function 
 
 
 arr.sort(function(a,b)  { return  b - a } );  //  will sort in dsecending order 
@@ -546,7 +554,6 @@ const fruits = ["mango","apple","pinapple"];
 for(let i=0; i<fruits.length; i++){
     console.log(fruits[i]);
 }
-
 
 
 
