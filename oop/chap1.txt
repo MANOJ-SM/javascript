@@ -1,8 +1,22 @@
 
+data struture : we use data struture to store values , differnt data struture for different way of storing the values 
+
+example :
+--------- 
+
+array : can stores the multiple values in one variable of differnt data type , and is mutable 
+
+string : stores sequence of char  in dbl quts 
+
+obj , number, etc
+------------------------------------------------------------------------
+
 
 object : key-value pair  //  collection of properties and methods 
 
 // inside the object , key will be a variable as usual but value can be anything -> string , array , number , function or anything 
+
+// object is an composite data struture can store multiple properties ,values and methodes 
 
 class : 
 
@@ -175,3 +189,4 @@ console.log(user);
 
 user.farewell();
 
+-----------------------------------------------------------------------------------
