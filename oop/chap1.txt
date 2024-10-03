@@ -24,9 +24,32 @@ object : key-value pair  //  collection of properties and methods
 
 // object is an composite data struture can store multiple properties ,values and methodes 
 
-class : 
+-------------------------------------------------------
+
 
 properties : characterstics or attributes of object 
+
+
+--------------------------------------------------------------
+class : A class defines the structure and behavior that objects created from it will have.
+        // a class can be ceated with constructor method with properties and another any method to log values of object 
+----------------------------------------------------------
+
+
+constructor : when we crete object for a class we need constructor , which will help to initialize the new values 
+             // This is a special method in classes used to initialize the object's properties.
+
+---------------------------------------------------------------------
+
+how do you create new variable inside class , using - this. keyword 
+
+whenever we use new keyword to create an object , the constructor is called 
+
+my__name = new Customer ("" , "" ) -> new (constructor)  Customer (of this class)
+
+object.function_name(); ->  in the class , will make that function called 
+
+console.log(bject.info) -> to call get info function inside the function , which will return something 
 
 
 object is an instance of a class 
@@ -35,6 +58,20 @@ object is an instance of a class
 Class as a Blueprint: A class defines the structure and behavior that objects created from it will have. It contains properties (data) and methods (functions) that define what the objects can hold and do. However, a class by itself is just a template and doesn't hold actual data until an object is created.
 
 Object as an Instance: When we create an object from a class, we are making a specific realization (or instance) of that class. The object has its own set of values for the properties defined by the class and can use the methods defined in the class.
+
+-----------------------------------------------------------------------------
+
+methods :  actions / functions that object can perform 
+
+// A method is a function that is defined inside a class and is associated with objects of that class are called mwthods .
+
+// methods are used to define the behaviors or actions that objects can perform.
+
+both properties and methods are defined in the class 
+
+
+------------------------------------------------------
+
 
 ---- example :
 
@@ -57,14 +94,6 @@ myCar.start();                                          // Outputs: Toyota Corol
 
 -------------------------------------------------
 
-methods :  actions / functions that object can perform 
-
-// any function you write inside an object is called method 
-
-both properties and methods are defined in the class 
-
-
-------------------------------------------------------
 
 Prototype Chain:
 
@@ -243,3 +272,4 @@ console.log(user);
 user.farewell();
 
 -----------------------------------------------------------------------------------
+
