@@ -92,6 +92,36 @@ const myCar = new Car('Toyota', 'Corolla');
 
 myCar.start();                                          // Outputs: Toyota Corolla is starting.
 
+
+------------------------------------------------------------
+
+// practice qtn  on class :
+
+class Car{
+    constructor(color,model){
+        this.color = color;
+        this.model =model;
+    }
+
+    get info(){
+        return this.color;
+    }
+
+    carDetails() {
+        console.log(`this car color ${this.color} is newly introduced to this  model of ${this.model}.`);
+    }
+
+}
+
+const my_car = new Car("red","2019");
+
+console.log(my_car.info);
+
+my_car.carDetails();
+
+
+
+
 -------------------------------------------------
 
 
@@ -143,17 +173,6 @@ greet() {
 
 --------------------------------------------------------------------------
 
-class student extends person {
-    constructor(name,age,grade){           // constructor:  involves all objects inside the current class 
-        super(name,age)                    // super : ivolves object (properties /variables) inherited from super class to this subclass
-        this.grade = grade;
-    }
-
-                                           // method which is not working right now 
-    study (){                                              
-            console.log(`hello my name is ${this.name} is studying `);
-    }
-}
 
 ---------------------------------------------------------------------
 
@@ -220,7 +239,7 @@ accesing obj with [ ]                //   usefull for dyanamic names
 function logSomething(property){
     console.log(user.property);   // vlue will not transform    // error 
 
-    console.log(user[property]);  //  user["age"]   // 52 
+    console.log(user[property]);  //  user["age"]   // 23 
 }
 
 logSomething("age");
@@ -246,7 +265,7 @@ const user = {
 };
 
 
-// updating the values 
+// updating the values existing property 
 
 user.names.fname = "alice";
 user["names"]["fname"] = "bob";
@@ -273,3 +292,55 @@ user.farewell();
 
 -----------------------------------------------------------------------------------
 
+
+-----------------------------------------------------
+
+
+// inheritence 
+
+class student extends person {
+    constructor(name,age,grade){           // constructor:  involves all objects inside the current class 
+        super(name,age)                    // super : ivolves object (properties /variables) inherited from super  // class to this subclass // 
+        this.grade = grade;
+    }
+
+                                           // method which is not working right now 
+    study (){                                              
+            console.log(`hello my name is ${this.name} is studying `);
+    }
+}
+
+
+
+// practice qtn  on inheritence  :
+
+
+class Car{
+    constructor(color,model){
+        this.color = color;
+        this.model =model;
+    }
+
+    get info(){
+        return this.color;
+    }
+
+    carDetails() {
+        console.log(`this car color ${this.color} is newly introduced to this  model of ${this.model}.`);
+    }
+
+}
+
+class newCar extends Car{
+    constructor(color,model,price){
+        super(color,model);
+        this.price = price;
+    }
+
+    printPrice(){
+        console.log(`the car price is ${this.price}`);
+    }
+}
+
+const my_car = new newCar("blue","2091",7787877);
+my_car.printPrice();
