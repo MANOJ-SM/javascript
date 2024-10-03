@@ -1,0 +1,40 @@
+
+in python  :
+
+# defining a class 
+
+class Car:
+    def __init__(self,color,model):
+        self.color = color
+        self.model = model 
+
+    def start(self):
+        print(f"The {self.color} {self.model} is starting.")
+
+
+# Creating a object 
+
+my_car = Car("Red","Honda")
+my_car.start()
+
+
+in js :
+
+// defing a car class 
+
+class Car {
+    constructor(make, model) {
+        this.make = make;                          class :  basic struture  // blueprint 
+        this.model = model;
+    }
+
+    start() {
+        console.log(`${this.make} ${this.model} is starting.`);
+    }
+}
+
+// Creating an object (instance) of the class 'Car'                 // using that struture to buid our needs 
+
+const myCar = new Car('Toyota', 'Corolla');
+
+myCar.start(); 
