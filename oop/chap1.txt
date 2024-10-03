@@ -70,6 +70,33 @@ methods :  actions / functions that object can perform
 both properties and methods are defined in the class 
 
 
+
+
+Prototype Chain:
+
+ Every JavaScript object has a prototype, which is another object from which it can inherit properties and methods
+
+JavaScript first checks the object itself. If it doesn't find it, it looks at the object's prototype. This process continues up the prototype chain until the property or method is found or the end of the chain is reached (null).
+
+--------------------------------------------------------------
+
+a constructor:  is used to create multiple objects 
+
+--------------------------------------------------------------------
+inheritence : inherting the properties of the of the parent 
+
+--------------------------------------------------------------------
+
+
+encapsulation : having all properties and methodes  / function in one class we call this as encapsulation
+
+
+// bundling of data and methods in  single unit 
+--------------------------------------------------------------------
+
+
+
+
 ------------------------------------------------------
 
 
@@ -124,28 +151,6 @@ my_car.carDetails();
 
 -------------------------------------------------
 
-
-Prototype Chain:
-
- Every JavaScript object has a prototype, which is another object from which it can inherit properties and methods
-
-JavaScript first checks the object itself. If it doesn't find it, it looks at the object's prototype. This process continues up the prototype chain until the property or method is found or the end of the chain is reached (null).
-
---------------------------------------------------------------
-
-a constructor:  is used to create multiple objects 
-
---------------------------------------------------------------------
-inheritence : inherting the properties of the of the parent 
-
---------------------------------------------------------------------
-
-
-encapsulation : having all properties and methodes  / function in one class we call this as encapsulation
-
-
-// bundling of data and methods in  single unit 
---------------------------------------------------------------------
 
 polymorphism : it allows objects to be treated as instances of their parent class
 
@@ -300,7 +305,7 @@ user.farewell();
 
 class student extends person {
     constructor(name,age,grade){           // constructor:  involves all objects inside the current class 
-        super(name,age)                    // super : ivolves object (properties /variables) inherited from super  // class to this subclass // 
+        super(name,age)                    // super : is used to call constructor of parent class 
         this.grade = grade;
     }
 
@@ -338,9 +343,14 @@ class newCar extends Car{
     }
 
     printPrice(){
-        console.log(`the car price is ${this.price}`);
+        console.log(`${this.mode} , car price is ${this.price}`);
     }
 }
 
 const my_car = new newCar("blue","2091",7787877);
-my_car.printPrice();
+
+
+my_car.printPrice();                         // childeren inheriting parent properties 
+
+my_car.carDetails();                         // parent extreacting children propertoes  "blue","2091",7787877
+
