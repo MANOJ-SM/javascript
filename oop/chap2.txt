@@ -43,4 +43,104 @@ the function written inside a obj is also  called method
 
 -----------------------------------------------------------------
 
-// Function Sharing 
+// Function Sharing b/w 1 / 2 objects using call() method 
+
+call method is ude when we to make `this` value points to particular object we want 
+
+apply() is also same but diiff in syntax while calling 
+
+bind() is also same but it returns a value of a called function, which can be stored and log leter 
+
+const user = {
+   fname : "manoj",
+   lname :"medleri",
+   printFullname : function (){
+         console.log(`my name is ${this.fname} ${this.lname}`);
+   }
+}
+
+user.printFullname();       
+
+// printfullname  methode is called using user obj hence the this inside method will point to obj 
+                    
+
+const user = {
+   fname : "manoj",
+   lname :"medleri",
+   printFullname : function (){
+         console.log(`my name is ${this.fname} ${this.lname}`);
+   }
+}
+
+user.printFullname();       
+
+
+const user2 = {
+    fname : "abhi",
+    lname : "alvndi",
+}                               
+
+
+user.printFullname.call(user2);
+
+
+// there is no printFullname methode in this obj but we can still access it from other object using call by passing object name inside it,   
+
+by this this will point to user2 object and perform printFullname function
+
+
+// Function Sharing b/w many objects 
+
+
+
+const user = {
+   fname : "manoj",
+   lname :"medleri",
+   
+}
+
+let printFullname = function (color,hobby){
+   console.log(`my name is ${this.fname} ${this.lname} & my favcolor is ${color} & hobby is ${hobby}`);
+}
+
+printFullname.call(user,"orange","learning");       // 1st parameter is object for which `this` will be pointing 
+                                                   // rest parameters are parameters which wewant to pass inside function 
+
+// printfullname  methode is called using user obj hence the this inside method will point to obj 
+                    
+const user2 = {
+   fname : "abhi",
+   lname : "alvndi",
+}                               
+
+
+
+printFullname.call(user2,"red","ytube");     
+
+
+
+// call() and apply() method are same 
+
+diff is -> passing rest parameters inside list using [ ]
+
+ printFullname.apply(user2, ["red","ytube"]);     
+
+// call() and apply() and bind() method are same 
+
+diff is -> bind returns the value of a function which need to stored in variable which will act linke function , which we can call any time 
+
+
+// call 
+
+printFullname.call(user2,"red","ytube");     
+
+// apply
+
+ printFullname.apply(user2, ["red","ytube"]);     
+
+// bind
+
+const printName =printFullname.bind(user,"blue","movies")
+printName();
+
+
