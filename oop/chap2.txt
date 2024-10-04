@@ -207,7 +207,7 @@ const obj = {
    x :10,
    z : function (){
       const  y = () => {           // interview qtns : on this keyword value in different situation 
-       console.log(this);         // value of `this`  is obj  here it prints whole obj 
+       console.log(this);         // value of `this` here is obj ,  here it prints whole obj 
    }  
    y();
 
@@ -243,4 +243,3 @@ function createCounter() {
    counter.increment(); 2
 
 
-   
