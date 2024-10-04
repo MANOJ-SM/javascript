@@ -143,4 +143,104 @@ printFullname.call(user2,"red","ytube");
 const printName =printFullname.bind(user,"blue","movies")
 printName();
 
+-----------------------------------
 
+// prcts qtn :
+
+
+Write a JavaScript function createGreeting that:
+
+Takes two parameters: firstName (string) and lastName (string).
+Defines an object person with properties firstName and lastName.
+Defines a function greet within createGreeting that logs a greeting message using this.firstName and this.lastName.
+Uses call, apply, and bind to invoke the greet function with different contexts:
+callGreet: Uses call to invoke greet with the person object as context.
+applyGreet: Uses apply to invoke greet with the person object and an array of arguments.
+bindGreet: Uses bind to create a bound function bindGreet that can be invoked later with the person object.
+
+
+function createGreeting(fname, lname) {
+    // Define person object with firstName and lastName properties
+    const person = {
+        fname : fname,
+        lname : lname,
+    }
+    // Define greet function within createGreeting
+    greet = function(){
+        console.log(`${this.fname} ${this.lname} `)
+    }
+    
+    // Use call to invoke greet with person context (callGreet)
+    greet.call(person,fname,lname);
+    
+    // Use apply to invoke greet with person context and array of arguments (applyGreet)
+    
+    greet.apply(person,[fname,lname]);
+    
+    // Use bind to create a bound function and assign it to bindGreet
+    
+    const userName = greet.bind(person,fname,lname)
+    
+   
+    userName();
+}
+
+createGreeting("John", "Doe");
+
+
+// value of `this` in arrow function 
+
+const obj = {
+    x :10,
+    y : () => {
+        console.log(this)               
+    }
+}
+
+// `this` is pointing to obj which is at global scope and prints the same ( where the obj has been defined )
+
+// in node - > obj will print // in browser -> window will be print 
+
+// another example 
+
+const obj = {
+   x :10,
+   z : function (){
+      const  y = () => {           // interview qtns : on this keyword value in different situation 
+       console.log(this);         // value of `this`  is obj  here it prints whole obj 
+   }  
+   y();
+
+   }
+}
+
+obj.z();
+
+
+
+// 3.example
+
+
+function createCounter() {
+    // Define counterObj with count property
+    const counterObj = {
+        count : 0
+    };
+
+    // Define increment arrow function within createCounter
+    
+    counterObj.increment = function()  {
+        counterObj.count +=1;
+        console.log(this.count);
+    };
+    
+    // Return the increment function
+    return counterObj;
+    
+}
+   const counter = createCounter();
+   counter.increment(); 1
+   counter.increment(); 2
+
+
+   
