@@ -1,0 +1,46 @@
+
+// window is the global object that will be present in the browser 
+
+everytime u r running a file along with the execution context , "this" keyword is also created
+
+this ponits to global object // incase of browser it is window 
+
+the value of `this` inside the function is   / global object in node js  and  / window object in browser. 
+
+--------------------------------------
+the value of `this` keyword inside function is a global object but incase of 
+"use strict" it is undefined 
+
+
+"use strict"
+
+function abc(){
+    console.log("abc");
+    console.log(this);  // global object 
+}
+
+abc();                                // abc , undefined 
+window.abc();                       // in browser -> window obj is shown 
+
+
+but when you call the function with any keyword like -> window.this -> then again this value points to global object and logs window object in console 
+
+-------------------------------------
+
+// this inside a object 
+
+const obj = {
+   x: 10,
+   y : function(){
+      console.log(this);
+   }
+}
+
+obj.y();           // y() is called using obj  -- value of `this` here is whole object (get printed)
+
+
+the function written inside a obj is also  called method 
+
+-----------------------------------------------------------------
+
+// Function Sharing 
