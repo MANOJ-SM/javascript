@@ -231,7 +231,7 @@ function createCounter() {
     
     counterObj.increment = function()  {
         counterObj.count +=1;
-        console.log(this.count);
+        console.log(this.count);                // referenceing to counterObj obj 
     };
     
     // Return the increment function
@@ -243,3 +243,128 @@ function createCounter() {
    counter.increment(); 2
 
 
+// mosh view of `this` keyword 
+
+this references the object that is executing the current function 
+
+the function  which is part of an object we call it as an method
+
+----------------------------------------------------------------------------------------------------
+
+1. if the function is method in an obj then ,  `this` -> obj 
+
+2. if the function is a regualar function in global scope then , 
+
+`this` -> (window obj in browser , global obj in node )
+
+
+3. `this` in a constructor function points to the  any objects created using constructer function 
+
+
+4. a call back function inside an object is an regualar function pointin to global obj 
+
+-----------------------------------------------------------------------------------------------------
+
+// example 1 
+
+const video = {
+   a :10,
+   play(){
+       console.log(this);
+   }
+}
+
+video.play();                    // video obj in console -> { a: 10, play: [Function: play] }
+
+// example 2
+
+const video = {
+   a :10,
+   play(){
+       console.log(this);
+   }
+}
+
+video.stop = function(){
+    console.log(this);
+}   
+
+video.stop();                         // video obj in console along with stop() -> 
+                                            { a: 10, play: [Function: play], stop: [Function (anonymous)] }
+
+
+// example 3 :  if the function is a regualar function in global scope then , 
+
+`this` -> (window obj in browser , global obj in node )
+
+
+
+const video = {
+   a :10,
+   play(){
+       console.log(this);
+   }
+}
+
+function playVideo(){
+    console.log(this);
+}
+
+playVideo();             // `this` pointing to global obj in node and window obj in browser 
+
+
+----------------------------------
+
+
+// example : in case of constructer function -> `this` will referncing to the new obj created using constructer 
+
+ In JavaScript, a constructor function is used to create and initialize objects.
+
+// 3. `this` in a constructor function points to the  any objects created using constructer function 
+
+// independent constructor function 
+
+function Video(title) {
+    this.title = title;                   // inside function ;
+    console.log(this);
+}
+
+// obj creation 
+
+const v = new Video("manu project");                // Video { title: 'manu project' }
+
+const m = new Video("abhi prjct");                  // Video { title: 'abhi prjct' }
+
+-------------------
+
+
+//      this in call back function 
+
+
+const video = {
+   title : "a",                                  // inside obj , 
+   tags : ["1","2","3"],
+    showTags(){
+      //  console.log(this.tags)                        // ["a","b","c"]
+
+      // this.tags.forEach(function(tag){            
+      //    console.log(this.title,tag);                    // undefined  , a / b / c
+      // });
+
+      // this.tags.forEach(function(tag){            
+      //    console.log(this,tag);                    // global obj  , a / b / c     here `this` referencing to gbl obj
+      // });                                                                        // as call back function is defined globaly 
+      
+      this.tags.forEach(function(tag){            
+         console.log(this.title,tag);                  
+      }, this);                              // a 1, a 2,a 3 
+
+      // now by setting the argument `this` at the end for forEach () , the `this` will be pointing to showTags() which reflected in the obj 
+      // by this now title can be accessed 
+
+      // this.tags.forEach( val => console.log(val));     // a , b , c 
+    }                          
+
+}
+
+video.showTags();
