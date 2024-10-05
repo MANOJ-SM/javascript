@@ -1,0 +1,16 @@
+
+// every js object has attached with some special property called prototype
+
+
+connst user = {
+    name : "manu",
+    city : "sgn",
+    printDetails : function(){
+        console.log(`i am ${this.name} from ${this.city}`);
+    }
+}
+
+// array will also have this special property bcoz array is also an object type 
+
+const arr = [ 1,2,3,4];
+
