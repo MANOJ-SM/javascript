@@ -36,8 +36,7 @@ class : A class defines the structure and behavior that objects created from it 
 ----------------------------------------------------------
 
 
-constructor : when we crete object for a class we need constructor , which will help to initialize the new values 
-             // This is a special method in classes used to initialize the object's properties.
+
 
 ---------------------------------------------------------------------
 
@@ -80,9 +79,6 @@ JavaScript first checks the object itself. If it doesn't find it, it looks at th
 
 --------------------------------------------------------------
 
-a constructor:  is used to create multiple objects 
-
---------------------------------------------------------------------
 inheritence : inherting the properties of the of the parent 
 
 --------------------------------------------------------------------
@@ -95,6 +91,16 @@ encapsulation : having all properties and methodes  / function in one class we c
 --------------------------------------------------------------------
 
 
+ Constructor:  
+
+1. In JavaScript, a constructor function is used to create and initialize objects.
+
+
+2. is used to create multiple objects 
+
+
+3. constructor : when we crete object for a class we need constructor , which will help to initialize the new values 
+             // This is a special method in classes used to initialize the object's properties.
 
 
 ------------------------------------------------------
@@ -188,7 +194,7 @@ const user = {};
 -----------------------
 
 const user = {
-    names : [ "alice" ,"bob"],             // name , age, printDetails,greet --> properties of object user 
+    names : [ "alice" ,"bob"],          // name , age, printDetails,greet --> properties of object user // correct
     age : 23,
     printDetails : function () {
         console.log("Details of User");
