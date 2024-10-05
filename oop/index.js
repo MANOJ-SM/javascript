@@ -1,16 +1,14 @@
 
 
 const user = {
-   fname : "manoj",
-   lname :"medleri",
-   printFullname : function (){
-         console.log(`my name is ${this.fname} ${this.lname}`);
+   name : "manu",
+   city : "sgn",
+   printDetails : function(){
+       console.log(`i am ${this.name} from ${this.city}`);
    }
-}
+};
 
-user.printFullname();       
-
-// printfullname  methode is called using user obj hence the this inside method will point to obj 
-                    
+user.printDetails();
 
 
+const arr = [ 1,2,3,4];
