@@ -1,6 +1,7 @@
 
 // every js object has attached with some special property called prototype
 
+// js engine attaches this special property 
 
 connst user = {
     name : "manu",
@@ -14,3 +15,14 @@ connst user = {
 
 const arr = [ 1,2,3,4];
 
+// arr  --> Array prototype --> object prototype  // arr.__proto__.__proto__  --> Object.prototype -> null 
+
+
+// user --> __proto__ --> Object.prototype
+
+user.__proto__  ----> Object.prototype  ----> Object.prototype.__proto__ ---> null
+
+                                                                      -->   end chain    <---
+     
+
+first  js checks - local - prototype - prototypeof prototype lter till reacing null 
