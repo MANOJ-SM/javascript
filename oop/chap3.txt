@@ -25,4 +25,47 @@ user.__proto__  ----> Object.prototype  ----> Object.prototype.__proto__ ---> nu
                                                                       -->   end chain    <---
      
 
-first  js checks - local - prototype - prototypeof prototype lter till reacing null 
+first  js checks - local - prototype - prototypeof prototype , lter till reacing null 
+
+
+
+// js first tries to search for a property in obj if not found then it moves to the prototype 
+
+
+// const user = {
+//    name : "manu",                                           // properties 
+//    city : "sgn",
+//    printDetails : function(){                                   // method 
+//        console.log(`i am ${this.name} from ${this.city}`);     
+//    }
+// };
+
+// user.printDetails();
+
+
+// const arr = [ 1,2,3,4];
+
+let myDate = new Date(2024,11,3);
+
+// normal inconsole -> by prototype -> myDate.getFullYear  first search in in obj itself 
+
+
+// by over shaddowing --> overwrittiing the getFullyear function in prototype 
+myDate.getFullYear = function() {
+    console.log("new date function added");
+
+}
+
+
+const user1 = {
+   name : "manu",                                           // properties 
+   city : "sgn",
+   printDetails : function(){                                   // method 
+       console.log(`i am ${this.name} from ${this.city}`);
+   },
+   toString : function(){
+    console.log("my string");
+   }
+};
+
+user1.printDetails();
