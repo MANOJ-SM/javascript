@@ -5,7 +5,9 @@ oop : representing the essential features of the object
 
 -------------------
 
-data struture : we use data struture to store values , differnt data struture for different way of storing the values 
+data struture : 
+
+A data structure is a way of organizing and storing data in a computer so that it can be accessed and modified efficiently.  
 
 example :
 --------- 
@@ -48,7 +50,7 @@ my__name = new Customer ("" , "" ) -> new (constructor)  Customer (of this class
 
 object.function_name(); ->  in the class , will make that function called 
 
-console.log(bject.info) -> to call get info function inside the function , which will return something 
+console.log(object.info) -> to call info function inside the function , which will return something 
 
 
 object is an instance of a class 
