@@ -351,16 +351,16 @@ const video = {
    tags : ["1","2","3"],
 
     showTags(){
-        
-      //  console.log(this.tags)                        // ["a","b","c"]
+
+      //  console.log(this.tags)                        // ["1","2","3"]
 
       // this.tags.forEach(function(tag){            
       //    console.log(this.title,tag);                    // undefined  , a / b / c
       // });
 
       // this.tags.forEach(function(tag){            
-      //    console.log(this,tag);                    // global obj  , a / b / c     here `this` referencing to gbl obj
-      // });                                                                        // as call back function is defined globaly 
+      //    console.log(this,tag);               // global obj  , a / b / c     here `this` referencing to gbl obj
+      // });                                                          // as call back function is defined globaly 
       
       this.tags.forEach(function(tag){            
          console.log(this.title,tag);                  
