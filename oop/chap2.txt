@@ -20,7 +20,7 @@ function abc(){
 }
 
 abc();                                // abc , undefined 
-window.abc();                       // in browser -> window obj is shown 
+window.abc();                        // in browser -> window obj is shown 
 
 
 but when you call the function with any keyword like -> window.this -> then again this value points to global object and logs window object in console 
@@ -45,7 +45,7 @@ the function written inside a obj is also  called method
 
 // Function Sharing b/w 1 / 2 objects using call() method 
 
-call method is ude when we to make `this` value points to particular object we want 
+call method is used when we to make `this` value points to particular object we want 
 
 apply() is also same but diiff in syntax while calling 
 
@@ -86,7 +86,7 @@ user.printFullname.call(user2);
 
 // there is no printFullname methode in this obj but we can still access it from other object using call by passing object name inside it,   
 
-by this this will point to user2 object and perform printFullname function
+by this `this` will point to user2 object and perform printFullname function
 
 
 // Function Sharing b/w many objects 
@@ -160,11 +160,14 @@ bindGreet: Uses bind to create a bound function bindGreet that can be invoked la
 
 
 function createGreeting(fname, lname) {
+
+
     // Define person object with firstName and lastName properties
     const person = {
         fname : fname,
         lname : lname,
     }
+
     // Define greet function within createGreeting
     greet = function(){
         console.log(`${this.fname} ${this.lname} `)
@@ -222,6 +225,7 @@ obj.z();
 
 
 function createCounter() {
+
     // Define counterObj with count property
     const counterObj = {
         count : 0
@@ -239,11 +243,13 @@ function createCounter() {
     
 }
    const counter = createCounter();
-   counter.increment(); 1
-   counter.increment(); 2
+   counter.increment();    // 1
+   counter.increment();    // 2
 
 
-// mosh view of `this` keyword 
+////// ----------------------------------- mosh view of `this` keyword 
+
+
 
 this references the object that is executing the current function 
 
@@ -307,7 +313,7 @@ const video = {
 }
 
 function playVideo(){
-    console.log(this);
+    console.log(this);   // this.a  --> 10 
 }
 
 playVideo();             // `this` pointing to global obj in node and window obj in browser 
@@ -316,15 +322,14 @@ playVideo();             // `this` pointing to global obj in node and window obj
 ----------------------------------
 
 
-// example : in case of constructer function -> `this` will referncing to the new obj created using constructer 
+// example 3) : in case of constructer function -> `this` will referncing to the new obj created using constructer 
 
  In JavaScript, a constructor function is used to create and initialize objects.
 
-// 3. `this` in a constructor function points to the  any objects created using constructer function 
 
 // independent constructor function 
 
-function Video(title) {
+function Video(title) {                     // function , this ---> constructor function 
     this.title = title;                   // inside function ;
     console.log(this);
 }
@@ -344,7 +349,9 @@ const m = new Video("abhi prjct");                  // Video { title: 'abhi prjc
 const video = {
    title : "a",                                  // inside obj , 
    tags : ["1","2","3"],
+
     showTags(){
+        
       //  console.log(this.tags)                        // ["a","b","c"]
 
       // this.tags.forEach(function(tag){            
