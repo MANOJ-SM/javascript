@@ -1,9 +1,9 @@
 
-// every js object has attached with some special property called prototype
+// every js object has  some special property  attached with it called prototype
 
 // js engine attaches this special property 
 
-connst user = {
+const user = {
     name : "manu",
     city : "sgn",
     printDetails : function(){
