@@ -25,11 +25,9 @@ user.__proto__  ----> Object.prototype  ----> Object.prototype.__proto__ ---> nu
                                                                       -->   end chain    <---
      
 
-first  js checks - local - prototype - prototypeof prototype , lter till reacing null 
-
-
-
-// js first tries to search for a property in obj if not found then it moves to the prototype 
+---------------------
+ first  js checks  in - local object - next in its next to its - prototypeof prototype , lter till reacing null 
+---------------------
 
 
 // const user = {
@@ -47,7 +45,7 @@ first  js checks - local - prototype - prototypeof prototype , lter till reacing
 
 let myDate = new Date(2024,11,3);
 
-// normal inconsole -> by prototype -> myDate.getFullYear  first search in in obj itself 
+// normal in browser console -> by prototype -> myDate.getFullYear  first search in in obj itself 
 
 
 // by over shaddowing --> overwrittiing the getFullyear function in prototype 
@@ -68,7 +66,7 @@ const user1 = {
    }
 };
 
-user1.printDetails();
+user1.printDetails();         // i am manu from sgn 
 
 // inheritence using prototype
 
@@ -102,6 +100,9 @@ function Person(name) {
 Person.prototype.greet = function() {
     console.log("Hello, my name is " + this.name);
 };
+
+// attaching a prototype and in that a function greet() ,   to person 
+
 
 var person1 = new Person("Alice");
 var person2 = new Person("Bob");
