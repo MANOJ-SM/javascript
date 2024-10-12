@@ -12,3 +12,11 @@ dom allows programs and scripts to dynamically acces and update the content  , s
 
 dynamic = changeable / can change / 
 
+---------------------------------------
+
+the dom begains with document object 
+every tags or ele inside the dom tree is a node 
+
+html is parent node ( root node / no parent ) and has children nodes : head and body 
+
+head and body are siblings bcoz they are in same level 
