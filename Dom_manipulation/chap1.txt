@@ -5,3 +5,10 @@
 DOM : document object model 
 
 web browser converts html document into tree like struture to render the information , this tree like struture is called DOM 
+
+// browser understanads dom 
+
+dom allows programs and scripts to dynamically acces and update the content  , struture and style of the document 
+
+dynamic = changeable / can change / 
+
