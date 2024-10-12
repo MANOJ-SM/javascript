@@ -1,0 +1,7 @@
+                    
+                    
+                     chap1 : dom overview and node realtionships
+
+DOM : document object model 
+
+web browser converts html document into tree like struture to render the information , this tree like struture is called DOM 
