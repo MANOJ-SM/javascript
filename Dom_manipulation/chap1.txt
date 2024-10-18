@@ -25,6 +25,8 @@ html is parent node ( root node / no parent ) and has children nodes : head and 
 
 head and body are siblings bcoz they are in same level 
 
+---------------------------------------------------------------------------
 
-document is root obj present inside browser 
+* document is root obj present inside browser ,so to access any ele of html we use document keyword 
+
 
