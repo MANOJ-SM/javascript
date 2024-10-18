@@ -8,31 +8,17 @@
 <body>
     <div id="root">
         <h1 class = "header">manu</h1>
-        <h1 class = "header">manoj</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat totam quia asperiores eius reiciendis rem quidem accusamus, fugit ipsum sapiente sequi commodi corrupti facilis odit beatae cum suscipit delectus odio!</p>
+
+        <img id = "myImg" src="image.png"> 
     </div>
     <script>
 
-           const byId = document.getElementById("root");
-           console.log(byId); 
+        const header =  document.querySelector(".header");
+        header.innerHTML = "dom manipulation";
 
-           const byTag = document.getElementsByTagName("p");   // returns an html collection array 
-           console.log(byTag);
+        
 
-           const byClass = document.getElementsByClassName("header");
-           console.log(byClass);
-
-           const byQuery = document.querySelector("#root")
-           console.log(byQuery);
-
-           const byQuery1 = document.querySelector(".header")
-           console.log(byQuery1);
-
-           const byQuery2 = document.querySelector("p");
-           console.log(byQuery2);
-
-           const byQuery3 = document.querySelectorAll(".header")
-           console.log(byQuery3);
     </script>
 </body>
 </html>
