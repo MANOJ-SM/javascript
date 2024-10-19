@@ -205,4 +205,56 @@ head and body are siblings bcoz they are in same level
 
     -------------------------------------
 
-    event bubbling and capturing 
+    event bubbling and capturing :
+
+    -----------------------------------------------
+
+     <div id="div1">
+        <h1>header1</h1>
+        <p  id="para1" >Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptatibus ad non? Alias deleniti quod minusnatus</p>
+    </div>
+
+    <div id="div2"> 
+        <h1>header2</h1>
+        <p id="para2" >nbcnbj kjejjkb ejbjkvb orem ipsum dolor sit amet consectetur adipisicing elit. In voluptatibus ad non? Alias deleniti quod minusnatus</p>
+    </div>
+
+    <script>
+
+        // the 3rd parameter of eventListener - 1. event , 2.function , 3. true or false (event bubbling/ event capturing ) dflt : false 
+
+        // event propogation is something when we add eventListner to both oute and inner ele of html which one to handle first  ;
+
+        
+
+        // by default the " Event Bubbling "  will happen : if we clicked outer , the outer eL is handled and if we clicked inner ele first inner eL will handled soon after the ouuter eL is also handled as inner ele is presnt inside the outer ;  
+
+
+        // event capturing : when clicked on inner ele , first outer ele is handled as inner ele will be inside the outer ele , and then inner ele is handeled 
+
+        // ------------------------------------------
+
+        //  event bubbling ( inner to outer )
+        
+        document.getElementById("div1").addEventListener("click",function(){
+            alert("outer ele is clicked");
+        },false);                                              // default : false 
+
+        document.getElementById("para1").addEventListener("click",function(){
+            alert("inner ele is clicked");
+        },false);                                                // default : false 
+
+
+        // event caputring  ( outer to inner )
+
+        document.getElementById("div2").addEventListener("click",function(){
+            alert("outer ele is clicked");
+        },true);
+
+        document.getElementById("para2").addEventListener("click",function(){
+            alert("inner ele is clicked");
+        },true);
+
+
+
+    </script>
