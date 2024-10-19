@@ -180,6 +180,7 @@ head and body are siblings bcoz they are in same level
         });
 
         document.querySelector("p").addEventListener("mouseover", onMouseOver);
+        
         function onMouseOver(){
             document.querySelector("p").innerHTML = "changed by mouse ";
 
@@ -255,6 +256,7 @@ head and body are siblings bcoz they are in same level
             alert("inner ele is clicked");
         },true);
 
-
-
     </script>
+
+
+    
