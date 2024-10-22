@@ -1,0 +1,65 @@
+
+
+in regualr prming only one piece of code is executed at a time 
+
+js is single threaded synchronous language :
+
+--> it executes one line of code at a time and one by one line 
+
+console.log("hi");
+console.log("hello");
+comsole.log("bye");
+
+
+---------------
+asynchronous progming : Asynchronous programming is a programming that allows tasks to run concurrently without waiting for other tasks to complete 
+
+
+setTimeout :
+------------
+
+setTimeout is the webAPi which allows to execute some pieceof code after some delay 
+
+1000ms = 1 sec 
+
+setTimeout( "() => {             " inside the doublee qts " whatever is there , it is call back function 
+                                                    bcoz it is passed inside another( setTimeout) function 
+}",1000);
+
+
+ex:
+------
+console.log("manu");
+
+setTimeout( () => {    
+    console.log("hello world!");        
+},1000);
+
+console.log("manoj");
+console.log("manoj");
+console.log("manoj");
+console.log("manoj");
+console.log("manoj");
+console.log("manoj");
+
+output:
+-------
+manu
+manoj
+manoj
+manoj
+manoj
+manoj
+manoj
+hello world!
+
+---------------
+
+what happened in the above cose is when it sees the callback function with some dely it dosent wait for that and excute it , it just skips it and runs rest of code and later come back to this call back function and execute this 
+---------------------------------------------
+Note :
+js is synchronous or asynchronous language ?
+
+js is synchronous language but in case of any use of callback , promises or event loops it will behave as asynchronous ;
+
+
