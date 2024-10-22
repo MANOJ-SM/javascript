@@ -55,6 +55,8 @@ hello world!
 
 ---------------
 
+Event Loop : 
+
 what happened in the above cose is when it sees the callback function with some dely it dosent wait for that and excute it , it just skips it and runs rest of code and later come back to this call back function and execute this 
 
 when event loop sees call back function  with dealy ,the same code will be pushed to the browers  with webApi setTimeout which will have timer in it  executes it and pushes it to the call back queue , and then, when  all the rest of code is executed (empty call stack ) , this code in call back queue is pushed  to call stack , and then it executes with its delay 
@@ -67,8 +69,12 @@ js is synchronous language but in case of any use of callback , promises or even
 
 ---------------------------
 
-event loop will keep track of each code line that is getting executed one by one in call stack and when all the code pieces get executed after one another and then after , and globall execution context  is also poped out , and call stack is empty 
+Micro Task queue (API calls and promises goes inside M T queue):
 
-then this event loop will look for call back queue ( which consist of call back functions with delays)
-and now whatever code is in call back queue woill be pushed to call stack , and then that code will be executed 
+similar to call back queue diiff is ,
 
+when we use the featch API which is also time taking , js will push that featch function to browser and after some time of its dealy its executed and pusshed to micro task queue
+
+this micro Task queue has higher prioprity then call back queue 
+
+so event loops goes or picks code in the M T queue and put in the call stack for execution 
