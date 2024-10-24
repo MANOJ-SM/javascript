@@ -95,3 +95,9 @@ so event loops goes or picks code in the M T queue and put in the call stack for
 2.what is call back queue or Micro Task queue
 3.which items goes into the c b queue or which items goes into the M T queue 
 4. set of code line with setTimout and  fetch like functions and ask the output order ( M T queue > C B queue )
+
+
+// callback :
+
+a function which is passed as an argument to another function 
+
