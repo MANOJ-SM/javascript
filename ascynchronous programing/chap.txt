@@ -60,15 +60,16 @@ hello world!
 ---------------
 Note :
 
-1. in case of multiple setTimeout the least time (delay) will executed one after the other
+1. in case of multiple setTimeout the least time (delay) will executed one after the other 1000 is executed first and 2000 will execute second after 1000 is completed 
+
 2. in case of same time dealy the one which is written first will be excuted first 
 
 -----------------------------------
 Event Loop : 
 
-what happened in the above cose is when it sees the callback function with some dely it dosent wait for that and excute it , it just skips it and runs rest of code and later come back to this call back function and execute this 
+what happened in the above code is when it sees the callback function with some dely it dosent wait for that and excute it , it just skips it and runs rest of code and later come back to this call back function and execute this 
 
-when event loop sees call back function  with dealy ,the same code will be pushed to the browers  with webApi setTimeout which will have timer in it  executes it and pushes it to the call back queue , and then, when  all the rest of code is executed (empty call stack ) , this code in call back queue is pushed  to call stack , and then it executes with its delay 
+when event loop sees call back function  with dealy ,the same code will be pushed to the browers  with webApi setTimeout which will have timer in it  executes it and pushes it to the call back queue , and then, when  all the rest of code is executed (empty call stack ) , this code in  "call back queue" is pushed  to call stack , and then it executes with its delay 
 ---------------------------------------------
 Note :
 js is synchronous or asynchronous language ?
@@ -78,7 +79,11 @@ js is synchronous language but in case of any use of callback , promises or even
 
 ---------------------------
 
+call back queue : when event loop sees call back function  with dealy ,the same code will be pushed to the browers  with webApi setTimeout which will have timer in it  executes it and pushes it to the call back queue , and then, when  all the rest of code is executed (empty call stack ) , this code in  "call back queue" is pushed to call stack  , and then it executes with its delay .
+
+
 Micro Task queue (API calls and promises goes inside M T queue):
+--------------------
 
 similar to call back queue diiff is ,
 
