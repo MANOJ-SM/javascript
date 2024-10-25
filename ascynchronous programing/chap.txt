@@ -273,6 +273,8 @@ function third(val,callback){    //  third fun is called result1 and a call func
 }
 
 
+// this below struture is called pyramid of Doom , bocz of its appernce and using multiple callback within
+
 function doOperation(){
     let result = 0;
     result = first(0, (result) => {
@@ -286,8 +288,10 @@ function doOperation(){
 }
 
 
-doOperation();
+doOperation();           // result 6 
 
+
+// with the help of callback fun we are making sure that , that my callback is executed only after my main function is executed eventhougth  it is taking time to execute. 
 
 
 
