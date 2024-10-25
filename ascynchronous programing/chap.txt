@@ -211,6 +211,8 @@ doOperation();
 // with time delay 
 
 
+NOTE : here in this case of syncronyous programming , the output will be NAN as the main function is skipped as it takes time to execute and in syncronyous programming js wont wait for anything 
+
 function first(val){
     setTimeout( () =>{
         return val +1;
@@ -244,7 +246,14 @@ doOperation();
 
 // NAN is o/p  -> because first function is taking time to execute and second and third function are executing before first function is done .
 
-// solution 
+
+-----------------------------------
+
+
+// with time delay using callback  function 
+
+
+NOTE : by callback function js starts behaving like asynchronous  programming  , it waits for the first function to complete and then executes the callback  function and so on .
 
 if i have to execute one function only after execution of its previous function  then i have to use callback function . 
 
