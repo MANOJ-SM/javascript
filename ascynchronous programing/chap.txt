@@ -150,7 +150,8 @@ dispayMessage(message);
 
 // to executee call back function in case of  time taking functions using callback keyword :
 
-function createMessage(name,callback){
+function createMessage(name,callback){            // here callback ==  dispayMessage()
+
     setTimeout(() => {
         const message = `hello ${name}`;
         callback(message);
@@ -165,12 +166,49 @@ function displayMessage(message){
 createMessage("manu",displayMessage);      // hello manu / after 3 seconds 
 
 
-// here in the above the callback is representing  the dispayMessage function.
+// here in the above the callback is representing  the dispayMessage function. *********
 
 // this is used when  we want to call a function after a certain time period but want to it to execute after some dealy .
- 
+
+
+//when we use setTimeout like function inside another function , then the outer function will became  asynchronous .
+
+// multiple task start to happen simultenously 
+
+// i want to call  a function only after my previous  function has completed its execution . then i will use 
+callback  function .
+
+//  callback function is used to call a function after a certain time period .
+
 ---------------------------------------------------
 
+
+// callback hell problem with no time delay 
+
+function first(val){
+    return val +1;
+}
+
+function second(val){
+    return val +2;
+}
+
+function third(val){
+    return val +3;
+}
+
+function doOperation(){
+    let result = 0;
+    result = first(result);
+    result = second(result);
+    result = third(result);
+    console.log(`result ${result}`);
+}
+
+doOperation();
+
+
+// with time delay 
 
 
 
