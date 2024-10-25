@@ -107,4 +107,71 @@ so event loops goes or picks code in the M T queue and put in the call stack for
 a function which is passed as an argument to another function 
 
 
+// normal callback function  : 
+
+function createMessage(name){
+    const message = `hello ${name}`
+    return message;
+}
+
+
+function dispayMessage(message){
+    console.log(message);
+}
+
+const message = createMessage('manu');
+dispayMessage(message);
+
+
+// result will be seen immediately - hello manu 
+-----------------------------------
+
+// here with some time delay , it will not execute properly 
+
+function createMessage(name){
+    setTimeout(() => {
+        const message = `hello ${name}`;
+        return message;
+    },3000);
+}
+
+
+function dispayMessage(message){
+    console.log(message);
+}
+
+const message = createMessage('manu');
+dispayMessage(message);
+
+
+// o/p -> undefined  /  as callback function is taking time to execute but js dosent wait for anything as it is synchronous
+
+----------------------------------- 
+
+// to executee call back function in case of  time taking functions using callback keyword :
+
+function createMessage(name,callback){
+    setTimeout(() => {
+        const message = `hello ${name}`;
+        callback(message);
+    },3000);
+
+}
+
+function displayMessage(message){
+    console.log(message);
+}
+
+createMessage("manu",displayMessage);      // hello manu / after 3 seconds 
+
+
+// here in the above the callback is representing  the dispayMessage function.
+
+// this is used when  we want to call a function after a certain time period but want to it to execute after some dealy .
+ 
+---------------------------------------------------
+
+
+
+
 
