@@ -336,5 +336,95 @@ three states of promise
 3.rejected
 
 
+-------------------------------------------------------------------
+
+// producing code 
+
+const promise = new Promise(function(resolve,reject){
+
+    let promiseResult;
+
+    setTimeout(()=>{
+        promiseResult = true;
+        if(promiseResult){
+            resolve("successfull");      
+        }
+        else{
+            reject("unsuccessfull");
+        }
+    },3000);
+
+   
+});
+
+// consuming code 
+
+promise.then( result => console.log(result));
+promise.catch( err => console.log(err));
+
+
+
+// if code reult will be resolved then , promise.then will be called 
+// if code result will be rejected then , promise.catch will be called
+
+// the resolve value will passed as an argument  to the callback function of promise.then ("successfull")
+// the reject value will passed as an argument to the callback function of promise.catch  ("unsuccessfull")
+
+
+
+/*
+
+1) above arrow function in normal function 
+
+promise.then(function(result) {
+    console.log(result);
+});
+
+
+2) once the code of promise is ecxecuted it will be in pending stage at first and then move to resolve or reject phase result.
+
+
+
+*/
+
+------------------------------
+
+practice problem 
+
+
+
+function simplePromiseDemo(success) {
+    // Return a Promise
+    return new Promise((Resolve,reject) => {
+
+    // Log "Promise is pending..."
+    
+    console.log("Promise is pending...");
+
+    // Simulate a network request with setTimeout
+    setTimeout( () => {
+            if(success){
+                Resolve("Promise fulfilled: Data received!");
+            }
+            else{
+                reject("Promise rejected: Error occurred!");
+            }
+        },2000);
+        
+    });
+
+
+}
+    
+    
+
+// Demonstrate fulfilled state
+simplePromiseDemo(true).then( result => console.log(result));
+
+// Demonstrate rejected state
+simplePromiseDemo(false).catch( err => console.log(err));
+
+
+
 
 
