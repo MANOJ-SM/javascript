@@ -425,6 +425,38 @@ simplePromiseDemo(true).then( result => console.log(result));
 simplePromiseDemo(false).catch( err => console.log(err));
 
 
+-----------------------------------------------------------------------------------------------------
+
+fetch API :
+
+this is basically provided by browser to make http request to server to get some data from server  
+
+
+fetch() methode is used to make an api call (rqst)  to server to get some data from server 
+
+(insted of typing url in browser search bar we can use this )
+
+whenver i fetching a url it returns me the promise object , it needs to be stored in varibale and consoled 
+
+** intial state of promise ois pending **
+
+
+/// promise is either fullfilled or rejected / resolved or rejected 
+
+as promise is Asynchronous , it takes time to get the data from server so it is pending state and then it is resolved or rejected 
+
+in the mean time , it excutes other code block that comes after promise code and once finsed all code snippetes it returns to promise code which will be either  resolved or rejected 
+
+----------------------------------------
 
 
 
+let promiseObject = fetch("https://dummyjson.com/products/1");
+
+console.log(promiseObject);
+
+promiseObject.then( response => response.json().then( result => console.log(result)));
+
+// promiseObject.catch( ERRresponse => console.log(ERRresponse));
+
+// we can use .json() methode to convert data into json formate data 
