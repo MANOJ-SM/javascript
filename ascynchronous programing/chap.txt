@@ -304,11 +304,36 @@ doOperation();           // result 6
 
 
 
+------------------------------------------------------------------------
+
+harry's view 
+------------ 
+
+synchronous - next code will be  blocked until prvs code execute.
+asynchronous - next code  will be executed even if previous code is still executing. 
+
+setTimeout - Asynchronous;
 
 
+asynchronous prming - multiple tasks(requests) or infinate no of taskss , can be done at a time .
 
-       
+there are 3 ways of writing asynchronous code 
 
+1.callback
+2.promises
+3.async/await
+
+----------------------
+
+promise - is the promise of code execution in future .
+
+it is the object and  connection blw , producing code and conuming code 
+
+
+three states of promise 
+1.pending
+2.fulfilled
+3.rejected
 
 
 
