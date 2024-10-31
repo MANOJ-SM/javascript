@@ -455,7 +455,8 @@ let promiseObject = fetch("https://dummyjson.com/products/1");
 
 console.log(promiseObject);
 
-promiseObject.then( response => response.json().then( result => console.log(result)));
+promiseObject.then( response => response.json()
+                        .then( result => console.log(result)));
 
 // promiseObject.catch( ERRresponse => console.log(ERRresponse));
 
@@ -506,3 +507,41 @@ processData(true);
 
 --------------------------------------------------------------------
 
+
+// individual calls not dependent on each other 
+// i want to know / console all,  once this all are resolved  
+// to use multiple promises -> Promises.all
+
+
+const firstObject = fetch("https://dummyjson.com/products/1")
+                            .then( response => response.json());
+
+
+
+const secondObject = fetch("https://dummyjson.com/users/1")
+                            .then( response => response.json());
+
+
+
+const thirdObject = fetch("https://dummyjson.com/posts/1")
+                            .then( response => response.json());
+
+
+/* we are using fetch with then , bcoz we need to tell js what happens when we 
+successfully fetched the data from url            */                 
+
+// here firstObject and all are holding  result of promises that are resolved 
+
+
+
+// to  wait and use  all  this promises  thogether // consoling responses                              
+
+Promise.all([firstObject,secondObject,thirdObject])
+    .then(responses => {
+        for(const response of responses ){
+            console.log(response);
+        }
+    })
+                         
+                            
+                            
