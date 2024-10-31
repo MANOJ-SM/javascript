@@ -541,7 +541,121 @@ Promise.all([firstObject,secondObject,thirdObject])
         for(const response of responses ){
             console.log(response);
         }
+    }).catch( err => conosle.log(`failed to fetch ${err}`));      
+
+    // catch will be called if any one of the url fails to fetch the content 
+
+
+// for accepting if any one of promises is resolved 
+----------------------------------------------------------------------------------------
+
+function fetchData1() {
+    // Return a Promise that resolves after 1 second
+    return  new Promise( resolve  => {
+        
+        setTimeout(()=>{
+            resolve("data from fetchData1");
+        }, 1000);
+    });
+}
+
+
+function fetchData2() {
+    // Return a Promise that resolves after 2 seconds
+    return  new Promise( resolve  => {
+
+        
+        setTimeout(()=>{
+            resolve("data from fetchData2");
+        }, 2000);
+});
+}
+
+function fetchData3() {
+    // Return a Promise that resolves after 3 seconds
+    return  new Promise( resolve  => {
+        
+        setTimeout(()=>{
+            resolve("data from fetchData3");
+        }, 3000);
+});
+
+}
+
+function fetchAllData() {
+    // Use Promise.all() to execute all fetchData functions concurrently
+
+    Promise.all([fetchData1(),fetchData2(),fetchData3()])
+        .then (results => {
+            console.log(results);
+        
+        })
+    
+        .catch(err => {
+        console.log(`failed to fetch ${err}`);
+        })
+
+ }
+
+fetchAllData();
+
+-----------------------------------------------
+
+[
+  'data from fetchData1',
+  'data from fetchData2',
+  'data from fetchData3'
+]
+                            
+ -----------------------------------------
+
+ // problem on Promise.any                            
+
+ function fetchData1() {
+    // Return a Promise that rejects after 1 second
+    return new Promise( resolve => {
+        setTimeout(function() {
+            resolve("Error from fetchData1")
+        }, 1000);
     })
-                         
-                            
-                            
+}
+
+function fetchData2() {
+    // Return a Promise that rejects after 2 second
+    return new Promise( resolve => {
+        setTimeout(function() {
+            resolve("Data from fetchData2")
+        }, 2000);
+    })
+}
+
+
+function fetchData3() {
+    // Return a Promise that rejects after 3 second
+    return new Promise( resolve => {
+        setTimeout(function() {
+            resolve("Data from fetchData3")
+        }, 3000);
+    })
+}
+
+function fetchAnyData() {
+    // Use Promise.any() to execute all fetchData functions concurrently
+
+    Promise.any([fetchData1(),fetchData2(),fetchData3()])
+    .then( result => {
+       console.log(result);
+})
+    .catch( err => {
+    console.log ( `failed to load ${err}`);
+})
+}
+
+fetchAnyData();
+
+---------------------------
+
+Data from fetchData2
+
+---------------------------------------------------------------------
+
