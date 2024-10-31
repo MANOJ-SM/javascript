@@ -6,6 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-   
+    <div id="parent"> 
+
+        <p id="oldpara">hello</p>
+
+    </div>
+
+    <script>
+       const para = document.createElement("p");             // new ele creation  
+       para.innerHTML = "manoj ,how are you!";
+
+        const parent = document.getElementById("parent");   
+        parent.appendChild(para);                                    // and appending it
+        
+
+        const exisitingPara = document.getElementById("oldpara");
+
+        parent.insertBefore(para,exisitingPara)                           //  and inserting it before any ele 
+
+
+        // exisitingPara.remove();                                             // removeing ele 
+    </script>
 </body>
 </html>

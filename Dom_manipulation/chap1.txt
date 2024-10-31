@@ -14,7 +14,7 @@ dynamic = changeable / can change /
 
 ---------------------------------------
 
-the dom begains with document object 
+the dom tree begains with document object 
 every tags or individual eles inside the html is a dom node 
 
 doc obj 
@@ -84,12 +84,13 @@ head and body are siblings bcoz they are in same level
         <p id="oldpara">hello</p>
 
     </div>
+
     <script>
-        const para = document.createElement("p");        
+        const para = document.createElement("p");             // new ele creation  
         para.innerHTML = "manoj ,how are you!";
 
-          const parent = document.getElementById("parent");    // new ele creation  
-     //   parent.appendChild(para);                                    // and appending it
+        const parent = document.getElementById("parent");   
+        parent.appendChild(para);                                    // and appending it
         
 
         const exisitingPara = document.getElementById("oldpara");
@@ -188,7 +189,8 @@ head and body are siblings bcoz they are in same level
 
         // removing eventListner
 
-        document.querySelector("button").addEventListener("click",function(){
+        document.querySelector("button").addEventListener("click",
+        function(){
          document.querySelector("p").removeEventListener("mouseover",onMouseOver);
         });
 
