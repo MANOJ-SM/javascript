@@ -746,3 +746,34 @@ async function feactDataResponse(){
 feactDataResponse();
 
 ----------------------------------------------------------
+
+own solved practice problem after  understanding the concept of async/await and error handling in async function with asynchronous task :
+
+
+function fetchUserData(){
+
+    return new Promise((resolve,reject) => {
+
+        setTimeout(() =>{
+            if(object1){
+                resolve(object1);
+            }else
+                reject("failed to featch user data ");
+        },2000)
+    });
+}
+
+async function getUserData(object1){
+     
+    try{
+        const result = await fetchUserData(object1);
+        console.log(result);
+    }catch( error){
+        console.log(error);
+    }
+
+}
+
+const object1 = {id : 1,   name : "John"};
+
+getUserData(object1);
