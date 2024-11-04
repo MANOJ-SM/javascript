@@ -683,6 +683,13 @@ fetchData();
 ----------------------------------------------
 Async / Await 
 
+-> makes code look like  synchronous code but still asynchronous in nature
+
+----------------------------------
+
+normal function with asynchronous task 
+--------------------------------------
+
 simple function that return promise in chaining process 
 
 function fetchData(){
@@ -693,5 +700,14 @@ function fetchData(){
 
 fetchData();
 
+--------------------------------------------------------------------------------------------
 
+async function with asynchronous  task 
+---------------------------------------
+
+async function feactDataResponse(){
+       const response = await fetch(" https://dummyjson.com/products/1");
+       const result = await response.json();
+       console.log(result);
+}
 
