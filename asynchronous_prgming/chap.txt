@@ -693,6 +693,5 @@ function fetchData(){
 
 fetchData();
 
-git commit -m "Remove unnecessary files"
 
 
