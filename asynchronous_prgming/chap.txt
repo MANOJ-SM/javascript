@@ -19,6 +19,9 @@ asynchronous progming : Asynchronous programming is a programming that allows ta
  asynchronous functions : setTimeout , featch ...
 ---------------------------------------------------
 
+whereever the setTimeout i used it will become  asynchronous task
+
+
 
 setTimeout (webAPI) provided by browser:
 ------------
@@ -266,49 +269,73 @@ doOperation();
 
 NOTE : by callback function js starts behaving like asynchronous  programming  , it waits for the first function to complete and then executes the callback  function and so on .
 
-if i have to execute one function only after execution of its previous function  then i have to use callback function . 
 
 
+// function first(val,callback){          // first fun is called with one intial value and one callback fun
+//     setTimeout( () =>{
+//         const result =  val +1;
+//         callback(result);        // here result  is passed  to same callback function in which second fun is called 
 
-function first(val,callback){          // first fun is called with one intial value and one callback fun
-    setTimeout( () =>{
-        const result =  val +1;
-        callback(result);        // here result  is passed  to same callback function in which second fun is called 
-
-    },1000);
+//     },1000);
     
+// }
+
+
+// function second(val,callback){     // here result is 1st parameter and callback is call function 
+//     const result1 =  val +2;
+//     callback(result1);             // result1 is passed to callback function 
+// }
+
+
+// function third(val,callback){    //  third fun is called result1 and a call function.
+//     const result2 =  val +3;
+//     callback(result2);           //  result2 is passed to callback function
+
+// }
+
+// function doOperation(){
+//     let result = 0;
+//     result = first(result);
+//     result =  second(result);
+//     result  = third(result);
+//     console.log(result);
+
+
+// }
+
+// doOperation();
+
+function first(val, callback) {
+    setTimeout(() => {
+        const result = val + 1;
+        callback(result); // Call the callback with the updated result
+    }, 1000);
 }
 
-
-function second(val,callback){     // here result is 1st parameter and callback is call function 
-    const result1 =  val +2;
-    callback(result1);             // result1 is passed to callback function 
+function second(val, callback) {
+    const result = val + 2;
+    callback(result); // Call the callback with the updated result
 }
 
-
-function third(val,callback){    //  third fun is called result1 and a call function.
-    const result2 =  val +3;
-    callback(result2);           //  result2 is passed to callback function
-
+function third(val, callback) {
+    const result = val + 3;
+    callback(result); // Call the callback with the final result
 }
 
-
-// this below struture is called pyramid of Doom , bocz of its appernce and using multiple callback within
-
-function doOperation(){
+function doOperation() {
     let result = 0;
-    result = first(0, (result) => {
-        second(result, (result1) =>{
-            third(result1, (result2) => {           // third fun is called result1 and a call function.and what 
-                console.log(`result ${result2}`);    this call back fun is doing is , it is printing final result
-            })
-        })
-    })
 
+    // Start with first and use callbacks to chain the operations
+    first(result, (firstResult) => {
+        second(firstResult, (secondResult) => {
+            third(secondResult, (finalResult) => {
+                console.log(`result is ${finalResult}`); // This should log the correct result
+            });
+        });
+    });
 }
 
-
-doOperation();           // result 6 
+doOperation();        // result is 6
 
 
 // with the help of callback fun we are making sure that , that my callback is executed only after my main function is executed eventhougth  it is taking time to execute. 
