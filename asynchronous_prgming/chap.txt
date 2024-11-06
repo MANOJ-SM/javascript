@@ -156,6 +156,8 @@ dispayMessage(message);
 
 // when i want to call  a function only after my previous  function has completed its execution . then i will use 
 callback  function .
+---------------------------------
+
 
 // to executee call back function in case of  time taking functions using callback keyword :
 
