@@ -23,7 +23,8 @@ asynchronous progming : Asynchronous programming is a programming that allows ta
 setTimeout (webAPI) provided by browser:
 ------------
 
-setTimeout is the webAPi which allows to execute some piece of code after some delay 
+In JavaScript, setTimeout is a function that allows you to delay the execution of a particular piece of code by a specified amount of time.
+
 
 1000ms = 1 sec 
 
@@ -38,7 +39,7 @@ console.log("manu");
 
 setTimeout( () => {    
     console.log("hello world!");        
-},1000);
+},3000);
 
 console.log("manoj");
 console.log("manoj");
@@ -56,7 +57,7 @@ manoj
 manoj
 manoj
 manoj
-hello world!
+hello world!                     // after all lines executed  and after 3 seconds 
 
 ---------------
 Note :
@@ -110,18 +111,19 @@ a function which is passed as an argument to another function
 
 // normal callback function  : 
 
-function createMessage(name){
-    const message = `hello ${name}`
-    return message;
+
+function createMessage(name, callback) {
+    const message = `hello ${name}`;
+    callback(message);                      // invokes the callback function  with the created message
 }
 
-
-function dispayMessage(message){
+function displayMessage(message) {
     console.log(message);
 }
 
-const message = createMessage('manu');
-dispayMessage(message);
+// Pass `displayMessage` as a callback to `createMessage`
+
+createMessage('manu', displayMessage);
 
 
 // result will be seen immediately - hello manu 
@@ -145,9 +147,15 @@ const message = createMessage('manu');
 dispayMessage(message);
 
 
-// o/p -> undefined  /  as callback function is taking time to execute but js dosent wait for anything as it is synchronous
+// o/p -> undefined  /  a function is taking time to execute hence any other function will dosent wait for anything as it is synchronous
 
 ----------------------------------- 
+
+
+2) why callback function is used ?
+
+// when i want to call  a function only after my previous  function has completed its execution . then i will use 
+callback  function .
 
 // to executee call back function in case of  time taking functions using callback keyword :
 
@@ -169,17 +177,17 @@ createMessage("manu",displayMessage);      // hello manu / after 3 seconds
 
 // here in the above the callback is representing  the dispayMessage function. *********
 
-// this is used when  we want to call a function after a certain time period but want to it to execute after some dealy .
+// this is used when  we want to call a function after a certain time period 
 
 
-//when we use setTimeout like function inside another function , then the outer function will became  asynchronous .
+1) question arsied :
 
-// multiple task start to happen simultenously 
+here , displayMessage ( call back function ) shoud not wait for createMessage function to execute as the this an asynchronous task , then why it is executing properly without giving undefinded value if displayMessage function executes before createMessage ?
 
-// i want to call  a function only after my previous  function has completed its execution . then i will use 
-callback  function .
+// in the above code , when crewe msg is called with display msg as call back function , what happens is js goes to to create msg as create msg is called but it will wait as it sees a setTimeout function with some dealy and executes the code inside setTimeout after particular delay 
 
-//  callback function is used to call a function after a certain time period .
+// after that msg is created callback function is invoked using callback() keyword this will call the callback function , and then callback function will run 
+
 
 ---------------------------------------------------
 
