@@ -422,8 +422,6 @@ promise.then(function(result) {
 
 practice problem 
 
-
-
 function simplePromiseDemo(success) {
 
     return new Promise((Resolve,reject) => {
@@ -442,12 +440,8 @@ function simplePromiseDemo(success) {
         },2000);
         
     });
-
-
 }
     
-    
-
 // Demonstrate fulfilled state
 simplePromiseDemo(true).then( result => console.log(result));
 
