@@ -20,7 +20,7 @@ asynchronous tasks
 1.callback
 2.promises
 3.async/await
- 
+
 
  asynchronous functions : setTimeout , featch ...
 ---------------------------------------------------
@@ -353,7 +353,6 @@ doOperation();        // result is 6
 promise - is the promise of code execution in future .
 
 it is the object and  connection blw , producing code and conuming code 
-
 
 three states of promise 
 1.pending
