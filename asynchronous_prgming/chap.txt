@@ -448,6 +448,14 @@ simplePromiseDemo(true).then( result => console.log(result));
 // Demonstrate rejected state
 simplePromiseDemo(false).catch( err => console.log(err));
 
+** intial state of promise is pending **
+
+
+/// promise is either fullfilled or rejected / resolved or rejected 
+
+as promise is Asynchronous , it takes time to get the data from server so it is pending state and then it is resolved or rejected 
+
+in the mean time , it excutes other code block that comes after promise code and once finsed all code snippetes it returns to promise code which will be either  resolved or rejected 
 
 -----------------------------------------------------------------------------------------------------
 
@@ -470,16 +478,7 @@ fetch() methode is used to make an api call (rqst)  to server to get some data f
 
 whenver i fetching a url it returns me the promise object , it needs to be stored in varibale and consoled 
 
-** intial state of promise is pending **
 
-
-/// promise is either fullfilled or rejected / resolved or rejected 
-
-as promise is Asynchronous , it takes time to get the data from server so it is pending state and then it is resolved or rejected 
-
-in the mean time , it excutes other code block that comes after promise code and once finsed all code snippetes it returns to promise code which will be either  resolved or rejected 
-
-----------------------------------------
 
 // fetch problem example 
 
