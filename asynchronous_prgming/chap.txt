@@ -794,3 +794,11 @@ async function getUserData(object1){
 const object1 = {id : 1,   name : "John"};
 
 getUserData(object1);            // {id : 1,   name : "John"};
+
+--------------------------------------------------------------------------
+
+1) call back :
+
+when i want to call  a function only after my previous  function has completed its execution . then i will use 
+callback  function .
+
