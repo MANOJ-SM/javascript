@@ -802,3 +802,7 @@ getUserData(object1);            // {id : 1,   name : "John"};
 when i want to call  a function only after my previous  function has completed its execution . then i will use 
 callback  function .
 
+2) promise :
+
+promise is the promise of code execution afetr sometime later and is used to handle asynchronous task .
+
