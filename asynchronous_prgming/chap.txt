@@ -806,3 +806,6 @@ callback  function .
 
 promise is the promise of code execution afetr sometime later and is used to handle asynchronous task .
 
+3) featch :
+
+featch is used for an api call , to get data from server . will get data in json format .
