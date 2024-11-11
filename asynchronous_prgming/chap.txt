@@ -469,7 +469,7 @@ fetch API :
 // .catch is used  to handle the error if any occurs during the api call.
 
 
-this is basically provided by browser to make http request to server to get some data from server  
+this is basically provided by browser to make http request (to server) to get some data from server  
 
 
 fetch() methode is used to make an api call (rqst)  to server to get some data from server 
@@ -582,6 +582,7 @@ Promise.all([firstObject,secondObject,thirdObject])
 
 function fetchData1() {
     // Return a Promise that resolves after 1 second
+
     return  new Promise( resolve  => {
         
         setTimeout(()=>{
@@ -792,4 +793,4 @@ async function getUserData(object1){
 
 const object1 = {id : 1,   name : "John"};
 
-getUserData(object1);
+getUserData(object1);            // {id : 1,   name : "John"};
