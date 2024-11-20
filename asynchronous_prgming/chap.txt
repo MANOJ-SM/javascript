@@ -222,7 +222,7 @@ function doOperation(){
     result = first(result);
     result = second(result);
     result = third(result);
-    console.log(`result ${result}`);
+    console.log(`result ${result}`);            // result 6 
 }
 
 doOperation();
@@ -231,7 +231,7 @@ doOperation();
 // with time delay 
 
 
-NOTE : here in this case of syncronyous programming , the output will be NAN as the main function is skipped as it takes time to execute and in syncronyous programming js wont wait for anything 
+NOTE : here in this case of syncronyous programming,the output will be NAN as the main function is skipped as it takes time to execute and in syncronyous programming js wont wait for anything 
 
 function first(val){
     setTimeout( () =>{
