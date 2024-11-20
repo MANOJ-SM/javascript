@@ -343,6 +343,21 @@ function doOperation() {
 
 doOperation();        // result is 6
 
+------
+
+note :
+
+first(result, (firstResult) => {
+
+in the above , an anonymous function is passed as an callback function , and function returns the reult to callback function , the callback function will pass that result as an argument to the next function in the chain.
+
+function handleFinalResult(finalResult) {
+    console.log(`Result is ${finalResult}`); // Log the final result
+}
+
+
+
+
 
 // with the help of callback fun we are making sure that , that my callback is executed only after my main function is executed eventhougth  it is taking time to execute. 
 
