@@ -355,9 +355,7 @@ function handleFinalResult(finalResult) {
     console.log(`Result is ${finalResult}`); // Log the final result
 }
 
-
-
-
+-----------------
 
 // with the help of callback fun we are making sure that , that my callback is executed only after my main function is executed eventhougth  it is taking time to execute. 
 
@@ -457,13 +455,10 @@ function simplePromiseDemo(success) {
     });
 }
     
-// Demonstrate fulfilled state
-simplePromiseDemo(true).then( result => console.log(result));
 
-// Demonstrate rejected state
-simplePromiseDemo(false).catch( err => console.log(err));
-
-** intial state of promise is pending **
+simplePromiseDemo(true)
+    .then( result => console.log(result))
+    .catch( err => console.log(err));
 
 
 /// promise is either fullfilled or rejected / resolved or rejected 
