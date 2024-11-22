@@ -380,6 +380,21 @@ means that the promise has successfully completed its task, and its state change
 Why Resolve a Promise?
 Resolving a promise tells the JavaScript runtime that an asynchronous task has completed successfully. It allows you to handle the result using .then() for further processing, chaining multiple promises, or managing multiple asynchronous operations effectively.
 
+----------------------------------
+
+simple function that return promise in chaining process 
+
+function fetchData(){
+    fetch(" https://dummyjson.com/products/1")
+    .then(response => response.json())               
+    .then(result => console.log(result));
+}
+
+fetchData();
+
+featched successfully
+ 1st .then -> The raw data (a JSON string) returned from a server is converted into a JavaScript object or array 
+ 2nd .then -> The result is logged to the console.
 -------------------------------------------------------------------
 
 // producing code 
@@ -471,6 +486,8 @@ in the mean time , it excutes other code block that comes after promise code and
 
 fetch API :
 
+if the featch successfully featchs the data required ( reovled ) then , .then is called and if there is any error in fetching the data then .catch is called
+
 
 // featch is used for an  api call 
 // fetch returns a promise 
@@ -556,6 +573,8 @@ processData(true);
 // to use multiple promises -> Promises.all
 
 
+//  featch problem  
+
 const firstObject = fetch("https://dummyjson.com/products/1")
                             .then( response => response.json());
 
@@ -586,11 +605,66 @@ Promise.all([firstObject,secondObject,thirdObject])
         }
     }).catch( err => conosle.log(`failed to fetch ${err}`));      
 
-    // catch will be called if any one of the url fails to fetch the content 
+// o/p > 3 objects in console at a time 
+
+// catch will be called if even  any one of the url fails to fetch the content 
 
 
 // for accepting if any one of promises is resolved 
 ----------------------------------------------------------------------------------------
+
+ // problem on Promise.any                            
+
+ function fetchData1() {
+    // Return a Promise that rejects after 1 second
+    return new Promise( resolve => {
+        setTimeout(function() {
+            resolve("Error from fetchData1")
+        }, 1000);
+    })
+}
+
+function fetchData2() {
+    // Return a Promise that rejects after 2 second
+    return new Promise( resolve => {
+        setTimeout(function() {
+            resolve("Data from fetchData2")
+        }, 2000);
+    })
+}
+
+
+function fetchData3() {
+    // Return a Promise that rejects after 3 second
+    return new Promise( resolve => {
+        setTimeout(function() {
+            resolve("Data from fetchData3")
+        }, 3000);
+    })
+}
+
+function fetchAnyData() {
+    // Use Promise.any() to execute all fetchData functions concurrently
+
+    Promise.any([fetchData1(),fetchData2(),fetchData3()])
+    .then( result => {
+       console.log(result);
+})
+    .catch( err => {
+    console.log ( `failed to load ${err}`);
+})
+}
+
+fetchAnyData();
+
+---------------------------
+o/p ->
+
+Data from fetchData2
+
+---------------------------------------------------------------------
+
+// promise problem 
 
 function fetchData1() {
     // Return a Promise that resolves after 1 second
@@ -644,6 +718,7 @@ function fetchAllData() {
 fetchAllData();
 
 -----------------------------------------------
+o/p >
 
 [
   'data from fetchData1',
@@ -653,99 +728,13 @@ fetchAllData();
                             
  -----------------------------------------
 
- // problem on Promise.any                            
-
- function fetchData1() {
-    // Return a Promise that rejects after 1 second
-    return new Promise( resolve => {
-        setTimeout(function() {
-            resolve("Error from fetchData1")
-        }, 1000);
-    })
-}
-
-function fetchData2() {
-    // Return a Promise that rejects after 2 second
-    return new Promise( resolve => {
-        setTimeout(function() {
-            resolve("Data from fetchData2")
-        }, 2000);
-    })
-}
-
-
-function fetchData3() {
-    // Return a Promise that rejects after 3 second
-    return new Promise( resolve => {
-        setTimeout(function() {
-            resolve("Data from fetchData3")
-        }, 3000);
-    })
-}
-
-function fetchAnyData() {
-    // Use Promise.any() to execute all fetchData functions concurrently
-
-    Promise.any([fetchData1(),fetchData2(),fetchData3()])
-    .then( result => {
-       console.log(result);
-})
-    .catch( err => {
-    console.log ( `failed to load ${err}`);
-})
-}
-
-fetchAnyData();
-
----------------------------
-o/p ->
-
-Data from fetchData2
-
----------------------------------------------------------------------
-
-
-
-function fetchData(){
-    fetch("https://dummyjson.com/products/1")
-    .then(response => response.json())
-    .then( result => console.log(result));
-}
-
-fetchData();
-
-// chaining of promise -> fetch is giving a promise then response .json() is giving a promise then result is giving a promise
-
-
-----------------------------------------------
-
 Async / Await 
 
 // async and await is used to handle the promise in a synchronous way.
 
 -> makes code look like  synchronous code but still asynchronous in nature
 
-----------------------------------
-
-normal function with asynchronous task 
---------------------------------------
-
-simple function that return promise in chaining process 
-
-function fetchData(){
-    fetch(" https://dummyjson.com/products/1")
-    .then(response => response.json())
-    .then(result => console.log(result));
-}
-
-fetchData();
-
-------------------------
-error handling in normal  function with asynchronous task :
-
-using .catch () method to handle the error
-
---------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 
 async function with asynchronous  task 
 ---------------------------------------
@@ -779,7 +768,9 @@ feactDataResponse();
 own solved practice problem after  understanding the concept of async/await and error handling in async function with asynchronous task :
 
 
-function fetchUserData(){
+// normal function 
+
+function fetchUserData(object1){
 
     return new Promise((resolve,reject) => {
 
@@ -791,6 +782,8 @@ function fetchUserData(){
         },2000)
     });
 }
+
+// async / await function 
 
 async function getUserData(object1){
      
@@ -806,6 +799,7 @@ async function getUserData(object1){
 const object1 = {id : 1,   name : "John"};
 
 getUserData(object1);            // {id : 1,   name : "John"};
+
 
 ------------------------------------------------------------------------------------------------------------
 
