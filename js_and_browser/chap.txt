@@ -22,5 +22,24 @@ compilation  takes AST and  creates machine code
    |    
  execution executes machine code(byte code)
 
+--------------------------------
 
+bowser provide objects and functions to interact with dom and other browser api's
+
+1.alert - used to display a message 
+2.prompt - used to get input from user and we can store that input in a variable
+3.confirm - to confirm the action ( like deltion )
+
+alert("hello");
+
+let fullName = prompt("enter ur name","manu");  // default name will be manu, which can be changeable also 
+console.log(fullName);
+
+const isconfirm = confirm("are u sure u want to delete");
+
+if(isconfirm){
+    console.log("deleted");
+}else{
+    console.log("not deleted");
+}
 
