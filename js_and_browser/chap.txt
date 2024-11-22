@@ -1,0 +1,26 @@
+// 1st js engine - spider monkey used in mozilla firebox
+
+// 2nd js engine - v8 used in google chrome
+
+each browser has its own js engine 
+
+js engine is program that takes  js code and executes it
+
+v8 is most efficent and powerfull compiler as it usses -
+- just in time compilation [ JIT compilation ]
+which is basically both the benefits of intrepreter(fast) and compiler(optimization)
+
+
+js engine 
+----------
+
+ js code
+   |
+ parsing   creates Absract syntax tree [AST]
+   |
+compilation  takes AST and  creates machine code
+   |    
+ execution executes machine code(byte code)
+
+
+
