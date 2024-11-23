@@ -114,4 +114,36 @@ delete localStorage.hobby;
 
 ------------
 
+sessionStorage :
+
+seesionStorage is similar to localStorage only diffrence is in localStorage the data will be persiist even if the user close the browser but in sessionStorage the data will be deleted when the user close the browser.
+
+also even if user opens the same session in new tab then data in new seesion will not be there, like in the previous session.
+
+example
+-------
+
+// sessionStorage 
+
+sessionStorage.setItem("session","FSD");
+
+const gettingItem = sessionStorage.getItem("session");
+
+console.log(gettingItem);
+
+sessionStorage.removeItem("session");
+
+sessionStorage.clear();
+
+geting input text into sessionStorage :
+
+<h1>sessionStorage</h1>
+<input type="text" id="random">
+
+
+const field = document.getElementById("random");
+
+field.addEventListener("change", function(){
+    sessionStorage.setItem("field",field.value);
+});
 
