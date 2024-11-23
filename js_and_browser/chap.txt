@@ -42,7 +42,9 @@ alert("hello");
 
 2.prompt - used to get input from user and we can store that input in a variable
 
-let fullName = prompt("enter ur name","manu");  // default name will be manu, which can be changeable also 
+let fullName = prompt("enter ur name","manu"); 
+
+ // default name will be manu, which can be changeable also 
 console.log(fullName);
 
 
@@ -50,15 +52,27 @@ console.log(fullName);
 
 3.confirm - to confirm the action ( like deltion )
 
-const isconfirm = confirm("are u sure u want to delete");
+const fullName = prompt("enter ur name : ","jhon");
 
-if(isconfirm){
-    console.log("deleted");
+const isuser = confirm("is user want to display his name");
+
+if(isuser){
+    console.log(fullName);
 }else{
-    console.log("not deleted");
+    console.log("user dont want to display his name");
 }
 
 
-o/p > cancle and ok button will be displayed on the screen and if user click ok then it will return deleted and if user click cancel then it will return not deleted
+o/p > ok and cancel button will be displayed on the screen and if user click ok then it will return if condition result and if user click cancel then it will return else condition result .
 
------------
+
+-------------------------------------------------------------------------------------------------------
+
+local storage :
+
+to set key : value pair in local storage we use setitem() method and
+
+to get key : value pair we use getitem() method
+
+example :
+
