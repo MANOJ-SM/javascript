@@ -24,16 +24,31 @@ compilation  takes AST and  creates machine code
 
 --------------------------------
 
-bowser provide objects and functions to interact with dom and other browser api's
+1.document object  model (DOM): 
+
+document is the obj provided by browser to us and using that object we can manupulate many html elements 
+
+2.Browser Object Model (BOM) : 
+
+it is a collection of additional objects apart from dpocument object that are available in browser environment.  used to interact with browser and its functionality.
+
+--------
 
 1.alert - used to display a message 
-2.prompt - used to get input from user and we can store that input in a variable
-3.confirm - to confirm the action ( like deltion )
 
 alert("hello");
 
+------
+
+2.prompt - used to get input from user and we can store that input in a variable
+
 let fullName = prompt("enter ur name","manu");  // default name will be manu, which can be changeable also 
 console.log(fullName);
+
+
+------
+
+3.confirm - to confirm the action ( like deltion )
 
 const isconfirm = confirm("are u sure u want to delete");
 
@@ -43,3 +58,7 @@ if(isconfirm){
     console.log("not deleted");
 }
 
+
+o/p > cancle and ok button will be displayed on the screen and if user click ok then it will return deleted and if user click cancel then it will return not deleted
+
+-----------
