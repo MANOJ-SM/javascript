@@ -68,11 +68,50 @@ o/p > ok and cancel button will be displayed on the screen and if user click ok 
 
 -------------------------------------------------------------------------------------------------------
 
-local storage :
+local storage : to store some dat in the browser in key value pair format.
 
-to set key : value pair in local storage we use setitem() method and
+to set item : value pair in local storage we use setitem() method and
 
-to get key : value pair we use getitem() method
+to get item : value pair we use getitem() method
 
-example :
+to remove/ delete  item  : value pair we use removeitem() method
+
+to clear entire localStorage : localStorage.clear();
+
+example 
+---------
+
+// setItem()
+
+localStorage.setItem("name","manu");
+
+//  getItem() 
+
+const value = localStorage.getItem("name");
+
+console.log(value);
+
+localStorage.setItem("rollNo","29");
+
+//  removeItem() 
+
+localStorage.removeItem("name");
+
+-------------------
+
+// lenght of localStorage 
+
+console.log(localStorage.length);
+
+// another way of getting item in localStorage via index no 
+
+console.log(localStorage.key(0));
+
+//  another way to remove/delete  item from localStorage
+
+localStorage.hobby = "photography";
+delete localStorage.hobby;
+
+------------
+
 
