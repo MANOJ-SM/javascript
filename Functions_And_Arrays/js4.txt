@@ -67,7 +67,7 @@ console.log(DoubledArray);
 
 hello = () => {
     return "Hello World!";
-  }
+}
 
 
 const users = [ {                       // array of object 
