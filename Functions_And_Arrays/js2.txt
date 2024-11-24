@@ -265,9 +265,6 @@ const fullName2 = fname.concat(lname);
 console.log(fullName2);
 
 
-
-
-
 // to get/extract  the character from string  ---->  charAt , at , charCodeAt  / starts from 0 , reverse from 1
 
 
@@ -352,7 +349,7 @@ Destructuring
 
 --> const cannont be redeclered  in same scope and need to inatialize immidetely in the same line 
     
-    let cannont can be redeclered in the same scope asweell but it it can be reinitiallize later in same scope ;
+    let cannot can be redeclered in the same scope asweell but it it can be reinitiallize later in same scope ;
 
 
 2 diff blw var / let and const 
@@ -369,8 +366,7 @@ const user = { fname : "manu" , lname : "medleri" }
 
 user.hobby = "motivating";
 
-console.log(user);
-
+console.log(user);                  // { fname: 'manu', lname: 'medleri', hobby: 'motivating' }
 
 
 // ---------------------------------arrow functions 
@@ -386,13 +382,9 @@ const result = sum(2,4);
 console.log(result);
 
 
-* function keyword is used and in arrow function keyword is not used and a const keyword is used to declear variable in which function can be stored.
-
-
-
 // function expression // arrow function 
 
-// for function always a const keyword is used to declre variable 
+// for function always a const keyword is used to declear variable 
 
 const sum = (a,b) => {
     return a + b;
