@@ -399,7 +399,7 @@ while(value<=10){
 
 // --------------------- do while loop 
 
-do while loop 
+do while loop : to run the code atleast once regardless of condition getting true or false 
 
 let value = 1;
 
