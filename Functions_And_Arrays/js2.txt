@@ -1,10 +1,9 @@
 
 // core concepts 
 
-// length  of strings starts from 1 
-// array starts from 0 
-//strings starts from 0 
-
+// length  of strings  and array starts from 1 
+// index of strings starts from 0 
+// index of array starts from 0 
 
 
 whenever we declere a variable or an function , 1st the memory will be allocated to each and then after the exection of particular code takes place
