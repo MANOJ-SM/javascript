@@ -110,7 +110,7 @@ console.log(eachUser);
 filter out the array ele based on sepecific conditions 
 will not modify original array insted return new array    
 
-//diff map b/w filter
+// diff map b/w filter
 
 map methode traverese the arrray and  transforms(changing) each array ele acc to the given function 
 
