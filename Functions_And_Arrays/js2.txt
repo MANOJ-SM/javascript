@@ -1,7 +1,7 @@
 
 // core concepts 
 
-// length starts from 1 
+// in strings length starts from 1 
 // array starts from 0 
 //strings starts from 0 
 
