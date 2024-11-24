@@ -1,7 +1,7 @@
 
 // core concepts 
 
-// in strings length starts from 1 
+// length  of strings starts from 1 
 // array starts from 0 
 //strings starts from 0 
 
@@ -11,7 +11,7 @@ whenever we declere a variable or an function , 1st the memory will be allocated
 
 1st phase : memeroy allocation , 2nd phase : code execution ;
 
-once all the variable , function mmry allocation is done , the execution phase start from again first line if the variable space is allocated now its value wiil be assigend .
+once all the variable , function mmry allocation is done , the execution phase start from again  from first line if the variable space is allocated now its value wiil be assigend .
 
 //  variable hoisting 
 
@@ -21,7 +21,7 @@ decalration are moved on top / hoisted on top of the block and intiallized with 
 
 conole.log(a);  // ** it will not throw error  ** it shows undefined (bcoz mmry is alrdy allocated 1st phase )
 
-var a;                   /// imaginary :  variable decaration moved to top     
+var a;                   /// imaginary :  variable decalration moved to top     
 
 conole.log(a);   // undefind 
 
@@ -67,7 +67,7 @@ variables are allocated with mmry but cannont be accessed until value is intiali
 
 let and const will stay in temporal dead zone unil the value is intailized 
 
-the variable declred using let and const will be allocated with mmry but cant be accessed until the value is initailaized  is called let and const temporal dead zone 
+the variable declred using let and const will be allocated with mmry but cant be accessed until the value is initailaized  is called   "let and const temporal dead zone" 
 
 // let and const variables are declred in script declartions sepretely 
 
@@ -105,9 +105,9 @@ all the parameter values are collected in one variable
 // apart from specified , rest of the parameter values are collected in one variable 
 
 
-function sumOfAllNum(...args){                    //  ...  3 dots 
-    let sum = 0;                                  // when there are multiple argument val's are there then they are difficult to 
-    for(let value of args){                          to pass as parameters , in that rest parameters are used 
+function sumOfAllNum(...args){     //  ...  3 dots 
+    let sum = 0;                   // when there are multiple argument val's are there then they are difficult to 
+    for(let value of args){           to pass as parameters , in that rest parameters are used 
         sum = sum + value;
     }
     return sum;
@@ -145,7 +145,7 @@ if u dont want some index values in array not be run
 
 // -- spread syntax 
 
-(...) -> spread operator                // array elements  in one arument val
+(...) -> spread operator                // array elements  in one argument val
 
 can pass array values as arguments  
 
@@ -186,7 +186,7 @@ myname = "manoj s m"
 
 console.log(myname.length);   // 9        // spaces are included 
 
-fullName = " myname is \"manoj\" and i am from shiggoan " 
+fullName = " myname is \"manoj\" and i am from shiggoan "       \\ escape   -> \"   \" 
 
 or 
 
@@ -194,12 +194,13 @@ fullName = 'my name is "manoj" and i am from shiggaon'
 
 console.log(fullName);          //  myname is "manoj" and i am from shiggoan 
 
-// using escape ( \ ) before " "
-
+-----------
 
 // --  strings shouldn't be declred as objects 
 
 let myname = new string("manoj");
+
+-----------
 
 // --  strings are immutable -- means orginal string ko kuch nahi hoga 
 
@@ -220,7 +221,7 @@ let string ="i am from shiggoan";
 
 let splitString = string.split(" ");
 
-console.log(splitString);
+console.log(splitString);            // [ 'i', 'am', 'from', 'shiggoan' ]
 
 
 let randomText = "manoj , manu, abhi "
