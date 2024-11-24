@@ -232,7 +232,7 @@ age > 18 ? console.log("adult") : console.log("not adult");
         ( ? true) -> result (: false) -> result 
 --------------------------------------------------------------------------------------------------
 
---------------------   conversion of  number to string 
+--------------------   relation of  number to string 
 
 
 let age = 20;
@@ -288,7 +288,7 @@ let grade;
 
 if(marks > 90 ){
     grade = "A"
-} else if(marks > 80 && marks >= 90){
+} else if(marks > 80 && marks <= 90){
     grade ="B"
 }else if(marks > 70 && marks <= 80){
     grade = "C"
@@ -304,8 +304,6 @@ console.log("grade",grade);
 let dayNumber = 7;
 
 let day ;
-
-
 let msg ;
 
 switch(dayNumber){
