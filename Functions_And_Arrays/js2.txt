@@ -438,8 +438,3 @@ let person = {
 
 console.log(person.sayName());             // Hi my name is Ryan Christiani
 
-
-
-[ ...array1 , ...array2]  // merging two arrays 
-
-{ ...obj1 , ...obj2 }     // merging 2 objs 
