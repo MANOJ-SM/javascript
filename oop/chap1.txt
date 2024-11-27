@@ -33,14 +33,9 @@ properties : characterstics or attributes of object
 
 
 --------------------------------------------------------------
-class : A class defines the structure and behavior that objects created from it will have.
+class : A class defines the structure and behavior of that objects created from it will have.
         // a class can be ceated with constructor method with properties and another any method to log values of object 
 ----------------------------------------------------------
-
-
-
-
----------------------------------------------------------------------
 
 how do you create new variable inside class , using - this. keyword 
 
@@ -186,9 +181,6 @@ greet() {
 }
 
 --------------------------------------------------------------------------
-
-
----------------------------------------------------------------------
 
 // object literal // empty object 
 
