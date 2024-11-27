@@ -8,14 +8,14 @@ web browser converts html document into tree like struture to render the informa
 
 // browser understanads dom 
 
-dom allows programs and scripts to dynamically acces and update the content  , struture and style of the document 
+dom allows programs and scripts to dynamically acces and update the content ,struture and style of the document 
 
 dynamic = changeable / can change / 
 
 ---------------------------------------
 
 the dom tree begains with document object 
-every tags or individual eles inside the html is a dom node 
+every tags or individual ele inside the html is a dom node 
 
 doc obj 
 html - root node 
@@ -78,11 +78,8 @@ head and body are siblings bcoz they are in same level
 
     -----------------------------------------------------------------------
 
-
     <div id="parent"> 
-
         <p id="oldpara">hello</p>
-
     </div>
 
     <script>
@@ -92,11 +89,9 @@ head and body are siblings bcoz they are in same level
         const parent = document.getElementById("parent");   
         parent.appendChild(para);                                    // and appending it
         
-
         const exisitingPara = document.getElementById("oldpara");
 
-        parent.insertBefore(para,exisitingPara)                           //  and inserting it before any ele 
-
+        parent.insertBefore(para,exisitingPara)            //  and inserting it before any ele 
 
         exisitingPara.remove();                                             // removeing ele 
     </script>
