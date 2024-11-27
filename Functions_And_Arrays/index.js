@@ -1,12 +1,5 @@
-function x() {
-    var a =10
-    function y() {
-        console.log(a);
-    }
-    
-    return y;
-}
+let name = `manu
+  s
+     medleri ` ;
 
-const z = x();
-console.log(z);
-z();
+console.log(name);
