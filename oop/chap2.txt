@@ -5,7 +5,18 @@ everytime u r running a file along with the execution context , "this" keyword i
 
 this ponits to global object // incase of browser it is window 
 
-the value of `this` inside the function is   / global object in node js  and  / window object in browser. 
+1) the value of `this` inside the function is -> 
+    global object in node js  and  window object in browser. 
+
+2) this inside a object -> whole obj
+
+3) this inside a class -> instance of class
+
+4) this inside a arrow function -> global object in node js and window object in browser.
+
+5) this inside a constructor function -> instance of class.
+
+
 
 --------------------------------------
 the value of `this` keyword inside function is a global object but incase of 
@@ -45,7 +56,7 @@ the function written inside a obj is also  called method
 
 // Function Sharing b/w 1 / 2 objects using call() method 
 
-call method is used when we to make `this` value points to particular object we want 
+call() method is used when we to make `this` value points to particular object we want 
 
 apply() is also same but diiff in syntax while calling 
 
@@ -81,7 +92,7 @@ const user2 = {
 }                               
 
 
-user.printFullname.call(user2);
+user.printFullname.call(user2);   // abhi alvndi
 
 
 // there is no printFullname methode in this obj but we can still access it from other object using call by passing object name inside it,   
