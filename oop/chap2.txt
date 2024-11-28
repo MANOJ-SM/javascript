@@ -57,10 +57,11 @@ the function written inside a obj is also  called method
 // Function Sharing b/w 1 / 2 objects using call() method 
 
 call() method is used when we to make `this` value points to particular object we want 
+// whatever obj that will be present inside call methode this will points to that obj ( function sharing )
 
 apply() is also same but diiff in syntax while calling 
 
-bind() is also same but it returns a value of a called function, which can be stored and log leter 
+bind() is also same but it returns a value of a called function, which can be stored and log later 
 
 const user = {
    fname : "manoj",
@@ -101,7 +102,6 @@ by this `this` will point to user2 object and perform printFullname function
 
 
 // Function Sharing b/w many objects 
-
 
 
 const user = {
