@@ -343,7 +343,7 @@ class Car{
 
 }
 
-class newCar extends Car{                      // Car is subclass of parent  class newCar
+class newCar extends Car{                      // Car is subclass of - parent class newCar
     constructor(color,model,price){
         super(color,model);
         this.price = price;
