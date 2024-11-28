@@ -90,7 +90,7 @@ const child = {
 child.__proto__ = parent;  // prortoye of child will become parent ( obj proto) // can access properties of the parent obj 
 
 
-// prototype chain : a chain obj through where ech pbj inheriites properties and methodes from its prototype 
+// prototype chain : a chain obj through where ech obj inheriites properties and methodes from its prototype 
 
 
 function Person(name) {
