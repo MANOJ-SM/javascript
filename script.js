@@ -618,19 +618,26 @@ console.log(res);
 // let modulus = a % b;
 // console.log("modulus",modulus)
 
-let mode = "dark";
+// let mode = "dark";
 
-if(mode == "light"){
-    color = "white";
-}else{
-    color = "black";
+// if(mode == "light"){
+//     color = "white";
+// }else{
+//     color = "black";
+// }
+
+// console.log(color);
+
+
+
+let score = prompt("enter the score: ");
+if( score >= 90 && score <=100){
+    console.log("O");
+}else if( score >=80 && score <= 90){
+    console.log("E")
+}else {
+    console.log("G");
 }
-
-console.log(color);
-
-
-
-
 
 
 
