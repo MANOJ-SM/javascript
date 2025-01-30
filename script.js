@@ -488,7 +488,7 @@ console.log(str.length)
 
 
 template litreal : template litreal is a string created using back tick( ` manu` )
-string interpolation is when we sustutiste the placeholders or  embeded expressions in the string  
+string interpolation is when we substute the placeholders or  embeded expressions in the string  
 using  dollor and a expression within a curly braces  --   ${expression} */
 
 

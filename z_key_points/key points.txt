@@ -1,6 +1,7 @@
 
-1.template litreal : template litreal is a string created using back tick( ` manu` )
+1.template litreal : template litreal is a string created using back tick which helps in string interpolation and multi-line strings.
 
-2.string interpolation is when we substutiste the placeholders or  embeded expressions in the string  
+2.string interpolation is when we substute the placeholders or  embeded expressions in the string  
 using  dollor and a expression within a curly braces  -->   ${expression} */
 
+str.trim() - removes the white spaces [ spaces infront of str  and at the end of str]
