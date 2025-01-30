@@ -1,0 +1,6 @@
+
+1.template litreal : template litreal is a string created using back tick( ` manu` )
+
+2.string interpolation is when we substutiste the placeholders or  embeded expressions in the string  
+using  dollor and a expression within a curly braces  -->   ${expression} */
+

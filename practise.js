@@ -1,222 +1,250 @@
 
 
-function add(x,y){
-    add = x + y;
-    return add;
-}
+// function add(x,y){
+//     add = x + y;
+//     return add;
+// }
                                      
 
-console.log("addition= ", add(5,5));         
+// console.log("addition= ", add(5,5));         
 
 
-// check even or odd 
+// // check even or odd 
 
-function number(num){
-    if(num %2==0){
-        console.log("even")
-    }
-    else{
-        console.log("odd")
-    }
-}
-
-number(50)
-
-
-console.log("---------------------------------------------------------------------------------------------------------------------")
-
-
-// using function even or odd 
-
-
-function Even(num) {
-    return num % 2 === 0;
-  }
-  
-function Odd(num) {
-    return num % 2 !== 0;
-  }
-  
-console.log(" the given number is ",Even(8));             // true 
-console.log(Odd(7));                                      // true
-
-console.log("---------------------------------------------------------------------------------------------------------------------")
-
-function num(num) {
-    return num % 2 === 0;
-
-}
-
-console.log(num(6)) 
-
-
-console.log("---------------------------------------------------------------------------------------------------------------------")
-
-
-
-
-// boolean value
-
- let a = 4
- let b = 5
-
- console.log(a < b)
-
- console.log("---------------------------------------------------------------------------------------------------------------------")
-
-function jack(){
-    let a =9;
-    let b =16;
-    return a<b;
-}
-
-console.log(jack());
-
-console.log("---------------------------------------------------------------------------------------------------------------------")
-
-{
-let a = 5
-console.log( "a =",a )
-console.log("++a =", ++a)  // work and reflect 
-}
-
-console.log("---------------------------------------------------------------------------------------------------------------------")
-
-// let numm = prompt("enter a number = " );
-
-// if(numm %5 === 0){
-//     console.log("multiple of 5 ");
-// }else{
-//     console.log("not a multiple of 5");
+// function number(num){
+//     if(num %2==0){
+//         console.log("even")
+//     }
+//     else{
+//         console.log("odd")
+//     }
 // }
 
-//p2.write a code which can give grade to students according to their scores
-
-// 90-100 * A
-// 70-89  * B
-// 60-69  * C
-// 50-59  * D
-// 0-49   * F
+// number(50)
 
 
-// let score = prompt("enter the score : ");
+// console.log("---------------------------------------------------------------------------------------------------------------------")
 
-// if(score>=90 && score<=100){
-//     console.log("grade = A")
-// }else if(score>=70 && score<90){
-//     console.log("grade = B")
 
-// }else if(score>=60 && score<70){
-//     console.log("grade = C")
+// // using function even or odd 
 
-// }else if(score>=50 && score<60){
-//     console.log("grade = D")
 
-// }else{
-//     console.log("grade = F")
+// function Even(num) {
+//     return num % 2 === 0;
+//   }
+  
+// function Odd(num) {
+//     return num % 2 !== 0;
+//   }
+  
+// console.log(" the given number is ",Even(8));             // true 
+// console.log(Odd(7));                                      // true
+
+// console.log("---------------------------------------------------------------------------------------------------------------------")
+
+// function num(num) {
+//     return num % 2 === 0;
+
+// }
+
+// console.log(num(6)) 
+
+
+// console.log("---------------------------------------------------------------------------------------------------------------------")
+
+
+
+
+// // boolean value
+
+//  let a = 4
+//  let b = 5
+
+//  console.log(a < b)
+
+//  console.log("---------------------------------------------------------------------------------------------------------------------")
+
+// function jack(){
+//     let a =9;
+//     let b =16;
+//     return a<b;
+// }
+
+// console.log(jack());
+
+// console.log("---------------------------------------------------------------------------------------------------------------------")
+
+// {
+// let a = 5
+// console.log( "a =",a )
+// console.log("++a =", ++a)  // work and reflect 
+// }
+
+// console.log("---------------------------------------------------------------------------------------------------------------------")
+
+// // let numm = prompt("enter a number = " );
+
+// // if(numm %5 === 0){
+// //     console.log("multiple of 5 ");
+// // }else{
+// //     console.log("not a multiple of 5");
+// // }
+
+// //p2.write a code which can give grade to students according to their scores
+
+// // 90-100 * A
+// // 70-89  * B
+// // 60-69  * C
+// // 50-59  * D
+// // 0-49   * F
+
+
+// // let score = prompt("enter the score : ");
+
+// // if(score>=90 && score<=100){
+// //     console.log("grade = A")
+// // }else if(score>=70 && score<90){
+// //     console.log("grade = B")
+
+// // }else if(score>=60 && score<70){
+// //     console.log("grade = C")
+
+// // }else if(score>=50 && score<60){
+// //     console.log("grade = D")
+
+// // }else{
+// //     console.log("grade = F")
+// // }
+
+
+// console.log("-------------------------------------------------------------------------------------------")
+
+
+// // using prompt in a simple prgm
+
+
+//  let x = prompt("enter x : ");
+
+//  if(2<x<8){                  // x is greter then 2 and less then 8
+//     console.log("true");
+//  }else{
+//     console.log("false")
+//  }
+
+
+
+//  console.log("-------------------------------------------------------------------------------------------")
+
+// // sum of first 5 naural no's
+
+// let sum=0;
+// let m = 0;
+// let size =0;
+
+// for(let i=1;i<=5; i++){
+//     sum = sum+i;
+//     console.log("idx =", m , "sum =",sum)
+//     m++;
+//     size++;
+// } 
+// console.log("sum is ",sum); 
+// console.log("size is ",size); 
+
+
+
+// console.log("-------------------------------------------------------------------------------------------")
+
+// // individual char of a string with its idx number
+
+
+// let manu = "manumanumanu"
+
+// let idx = 0;
+
+// for(let i =0; i <manu.length; i++){
+//     console.log(" value of index", i ,"is =",  manu[i])
 // }
 
 
-console.log("-------------------------------------------------------------------------------------------")
+// console.log("-------------------------------------------------------------------------------------------")
+
+// // even no's from 2 to 10
+
+// for(let val=2; val<=10; val++){
+//    if(val%2==0){
+//     console.log(val);
+//    }
+
+// }
 
 
-// using prompt in a simple prgm
+// console.log("-------------------------------------------------------------------------------------------")
+
+// // even no's from 2 to 10
 
 
- let x = prompt("enter x : ");
-
- if(2<x<8){                  // x is greter then 2 and less then 8
-    console.log("true");
- }else{
-    console.log("false")
- }
-
-
-
- console.log("-------------------------------------------------------------------------------------------")
-
-// sum of first 5 naural no's
-
-let sum=0;
-let m = 0;
-let size =0;
-
-for(let i=1;i<=5; i++){
-    sum = sum+i;
-    console.log("idx =", m , "sum =",sum)
-    m++;
-    size++;
-} 
-console.log("sum is ",sum); 
-console.log("size is ",size); 
+// for(let val=2; val<=10; val+=2){         // val = val + 2
+//    console.log(val);
+// }
 
 
 
-console.log("-------------------------------------------------------------------------------------------")
 
-// individual char of a string with its idx number
+// console.log("-------------------------------------------------------------------------------------------")
 
 
-let manu = "manumanumanu"
+// // multiplication tables from 1 to 20
 
-let idx = 0;
 
-for(let i =0; i <manu.length; i++){
-    console.log(" value of index", i ,"is =",  manu[i])
+// for (let i = 1; i <= 20; i++) {
+//     for (let j = 1; j <= 10; j++) {
+//       console.log(i, "*", j ,"=",i * j);             
+//     }
+//     console.log("-----------")
+//   }
+
+// //  ---------------------------------------------------
+
+// console.log("-------------------------------------------")
+
+
+// //  trial 
+
+// function number(num){
+//     if(num %2==0){
+//         console.log("even")
+//     }
+//     else{
+//         console.log("odd")
+//     }
+// }
+
+// number(8)
+
+
+// sum=0;
+// size=0;
+// for(let i=1;i<=5; i++){
+//     sum = sum+i;
+    
+//     size++
+// } 
+// console.log("sum is ",sum);
+// console.log("size is : ", size);
+
+
+let i = 0;
+// while( i<=5){
+//     console.log(i);
+//     i++;
+// }
+
+let student={
+    name : "rahul",
+    age : 25,
+    cgpa :7.5,
 }
 
-
-console.log("-------------------------------------------------------------------------------------------")
-
-// even no's from 2 to 10
-
-for(let val=2; val<=10; val++){
-   if(val%2==0){
-    console.log(val);
-   }
-
+for(let i in student){
+    console.log("key =", i, "&" ,"values =", student[i]);
 }
-
-
-console.log("-------------------------------------------------------------------------------------------")
-
-// even no's from 2 to 10
-
-
-for(let val=2; val<=10; val+=2){         // val = val + 2
-   console.log(val);
-}
-
-
-
-
-console.log("-------------------------------------------------------------------------------------------")
-
-
-// multiplication tables from 1 to 20
-
-
-for (let i = 1; i <= 20; i++) {
-    for (let j = 1; j <= 10; j++) {
-      console.log(i, "*", j ,"=",i * j);             
-    }
-    console.log("-----------")
-  }
-
-//  ---------------------------------------------------
-
-console.log("-------------------------------------------")
-
-
-//  trial 
-
-function number(num){
-    if(num %2==0){
-        console.log("even")
-    }
-    else{
-        console.log("odd")
-    }
-}
-
-number(8)

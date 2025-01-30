@@ -288,6 +288,8 @@ console.log("size is : ", size)
 
 4.example
 
+length starts from "1" and index from "0" 
+
 let price = [250,645,300,900,50];
 
 let idx = 0;
@@ -311,8 +313,8 @@ for(let i =0; i <price.length; i++){
               updation 
             } 
 
-1.example 
 
+1.example 
 
 let i=1;
 while(i<=5){
@@ -345,7 +347,7 @@ do{
 
 /*
 
-4) for of   loop :
+4) for of loop :
 
 1.it is used for Strings and arrays 
 2.for of loop is used to print the individual character of the string 
@@ -627,17 +629,6 @@ console.log(res);
 // }
 
 // console.log(color);
-
-
-
-let score = prompt("enter the score: ");
-if( score >= 90 && score <=100){
-    console.log("O");
-}else if( score >=80 && score <= 90){
-    console.log("E")
-}else {
-    console.log("G");
-}
 
 
 
