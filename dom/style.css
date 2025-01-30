@@ -1,0 +1,27 @@
+.myclass {
+    background-color: burlywood;
+    color: blue;
+}
+
+body {
+    background-color: antiquewhite  ;
+}
+
+button {
+    background-color: blue;
+}
+
+/* h1 {
+    visibility: hidden;
+} */
+
+.style{
+    color:red;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.newstyle{
+    color:rgb(53, 12, 217);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}

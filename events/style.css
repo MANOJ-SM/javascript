@@ -1,0 +1,14 @@
+
+.div {
+    height: 100px;
+    width: 100px;
+    color: white;
+    background-color: dodgerblue;
+}
+
+div {
+    color: rgb(13, 22, 22);
+    background-color: antiquewhite;
+    height: 200px;
+    width: 200px;
+}

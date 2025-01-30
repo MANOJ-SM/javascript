@@ -1,444 +1,186 @@
-
-// javascript fondation 
-
-
-node js : it is javascript runtime enivornment to run js outside browser 
-
-console : it is the api presented by js 
-
-variable can be declred with var , let , var , const 
-
-let x =0;
-x =7;
-
-const = 10 ;
-
-
-ES^6
-
-// variables can begin with leters , $ , underscore and not with numbers 
-
-keyword cannont be declred as a variable ( " keywords are reserve words  ")
-
------------------------------------------------------------
-
-//  data types                                 
-
-the type of value the data is holding  
-
-primitive datatypes                      -- these are predefined by prog lang 
-
- ex :
-
-             let a = 10;
-
-             let b = a;                       // Now b holds its own copy of the value 10
-             b = 20;
-             console.log(a);                  // Output: 10
-             console.log(b);                  // Output: 20             
-
- the original data is  not changed 
-
-
-
-1. number  ,  let x =  10;
-
-2. string  ,  let x = " internshala ";
-
-3. boolean ,  let x = true/false ;
-
-4. null    ,  let x = null;
-
-5. undefined ,  let x ;
-
-6. BigInt , let x = BigInt (36178581783671456564345)                // to store big integer value 
-
-7. Symbol , let x = Symbol("756wjkb891")                            // to store uniue value 
-
-
-// 1 non - primitive data type                       -- these are created by programmer 
-
-    1. Array : stores the multiple values in one variable which can be of different kinds of data type , and it is # mutable 
-
-        if you copy array to an another array both the array will be pointing to same array not two different arrays are genereted.
-
-        ex:
-                let arr1 = [1, 2, 3];
-                
-        let arr2 = arr1;          // arr2 now points to the same array
-        arr2.push(4);             // Modify the array
-        console.log(arr1);        // Output: [1, 2, 3, 4] because arr1 and arr2 are referencing the same array
-        console.log(arr2);        // Output: [1, 2, 3, 4]        
-
-        the original data is changed 
-
-
-    2. Object , 
-
-const user = {
-    name : "manoj";
-    age : 21;                                                        // to store key value pair type of values 
-}
-
-
-//  the data type of an array is also a object 
-
--------------------------------------------------------------------------------------------------------
-
-// operators 
-
-1. arithematic operators   
-2. assignment operators 
-3. comparision operators
-4. logical operators 
-5. conditional operators 
-
-1.arithematic operators :
-
-let a = 2 ;
-let b = 2 ;
-
-let sum = a + b ;
-
-let diff = a - b;
-
-let mul = a * b;
-
-let expo = a ** b;
- 
-console.log("sum" , sum);
-
-
-
-let div = a / b;         example :               15 / 3 -->   3 |15 | 5    here quotient 5 is the answer 
-                                                                 15
-                                                                 0
-
-
-let mod = a % b ;        example :               15 % 3  -->  3 |15 | 5
-                                                                 15
-                                                                 0         here reminder 0 is the answer 
-
-                                                
-                                                 10 % 20 -->       0
-                                                                  ______
-                                                               20 | 10
-                                                                  - 0
-                                                                  ------
-                                                                    10
-
-    pheli wali no andar jayegi  
-
-
-post increment and pre increment 
-
-let num1 = 30
-
-console.log(num1++);  // 30
-console.log(num1);    // 31
-
-
-let x = 20;
-
-console.log(++x);  // 21
-
-
-// Assignment  operators 
-
-
-= -->  with arithematic operators        += , -= , *= ,  /= , % , **=
-
-let a = 10;
-let b = 20;        // = eqalls to
-
-
-a+=b;                                         // a = a + b                             a = 30
-a-=b;                                         //  -10 = 10 -20                         a = -10
-a*=b;                                         //  -200 = -10 *20                       a = -200
-a/=b;                                         //     -10 = -200/20                     a = -10
-console.log("modulus", a**=b);                 //    -10 =  -10 % 20                   a = -10
-a**=b;                                         //   100000(20 0's) =  -10^20           a =  1 and 20 0's
-
--------------------------------------------------------------------------------------------------
-
-// comparision operators 
-
-= with comparision operators      > , < , <=, >= , == , === 
-
-answer will be in boolean value 
-
-
-
-let age =20;
-
-let adult_age = age > 18
-
-console.log("adult",adult_age);
-
----------------------------------------------;
-
-// > , < , <= , >= 
-
-let x = 10;
-let y = 30;
-
-let isXlessTheny = x < y;
-
-console.log("isXlessTheny",isXlessTheny);
-
-
-// == ,     === ( equalls to and type )
-
-let a = 30;
-let b=BigInt(30);
-
-let same = a===b;
-console.log("same",same);
-
-console.log(0 == false );          // true 
-
-// != , !==
-
-let a = 30;
-let b=BigInt(30);
-
-let same = a!=b;
-console.log("same",same);
-
----------------------------------------------------------------------
-
-// logical operators      && , || , !=
-
-
-let x = 40;
-let y = 90;
-
-console.log( x > 30 && y > 80);    if both true -->  true 
-
-console.log( x > 60 || y > 100 );  if atleast one true --> true 
-
-console.log(!(x != 9));  // true --> false 
-
-// type operetor 
-
-console.log(typeof(x));
-
-// ternary operator   for if else condition  
-
-let age = 20;
-
-age > 18 ? console.log("adult") : console.log("not adult");
-
-        ( ? true) -> result (: false) -> result 
---------------------------------------------------------------------------------------------------
-
---------------------   relation of  number to string 
-
-
-let age = 20;
-let fullName = " manu";
-
-let sum = age + fullName;
-
-console.log("age with name : " ,sum)
-
- 5 + "5" --> 55    bagalme betega 
-
- 5 - "5" --> 0     sub opertaion hoga
-
- 10 / "2" --> 5    div opertaion hoga
-
-
- // integer or not 
-
- 
-function isInt(num) {
-      return Number.isInteger(num);
-      
-}
-
-
-console.log(isInt(12));
-
-----------------------------------------------------------------------------------------------------------
-
-
-// conditional statements ,   if , else , else if , switch 
-
-
-1)
-
-let num = 46;
-
-if(num >0){
-    console.log("number is positive );
-}else {
-    console.log("number is negative)
-}
-
-
-
-
-2)
-
-let marks = 75;
-
-let grade;
-
-
-if(marks > 90 ){
-    grade = "A"
-} else if(marks > 80 && marks <= 90){
-    grade ="B"
-}else if(marks > 70 && marks <= 80){
-    grade = "C"
-}else {
-    grade = "F"
-}
-
-console.log("grade",grade);
-
-------------------------------------------------
-// switch statement 
-
-let dayNumber = 7;
-
-let day ;
-let msg ;
-
-switch(dayNumber){
-    case 0 :
-        day = "sunday";
-        break;
-
-    case 1 :
-        day = "monday";
-        break;
-
-    case 2 :
-        day = "tuesday";
-        break;
-
-    case 3 :
-        day = "wednesday";
-        break;
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Weather Forecast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-400 via-blue-300 to-blue-500 min-h-screen flex items-center justify-center font-poppins">
+    <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-xl">
+        <!-- Header -->
+        <h1 class="text-3xl font-extrabold text-center text-blue-700 mb-6">
+            Weather Forecast Application
+        </h1>
+
+        <!-- Search Bar -->
+        <div class="flex items-center justify-center gap-4 mb-6">
+            <input type="text" id="cityInput" placeholder="Enter City Name"
+                class="w-2/3 border border-gray-300 rounded-lg px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <button id="searchButton"
+                class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition-all">
+                Search
+            </button>
+        </div>
+
+        <!-- Dropdown for Recent Cities -->
+        <div class="mb-6">
+            <label for="recentCities" class="block text-gray-700 font-medium mb-2">Recent Cities:</label>
+            <select id="recentCities" class="w-full border border-gray-300 rounded-lg px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+                <option disabled selected>Select a recent city</option>
+            </select>
+        </div>
+
+        <!-- Weather Details -->
+        <div id="weatherContainer" class="hidden bg-blue-100 p-6 rounded-lg shadow-md">
+            <h2 id="cityName" class="text-2xl font-bold text-blue-800 text-center mb-4"></h2>
+            <div class="flex items-center justify-center flex-col">
+                <!-- Weather Icon -->
+                <div class="w-24 h-24 flex items-center justify-center bg-gradient-to-r from-blue-300 to-blue-500 rounded-full shadow-lg">
+                    <img class="weather-icon w-16 h-16" alt="Weather Condition" />
+                </div>
+                <div class="text-center mt-4">
+                    <p id="temperature" class="text-4xl font-extrabold text-blue-700"></p>
+                    <p id="conditions" class="text-lg text-gray-600"></p>
+                </div>
+            </div>
+            <p id="humidity" class="text-gray-700 mt-4 text-center"></p>
+            <p id="wind" class="text-gray-700 text-center"></p>
+        </div>
         
-    case 4 :
-        day = "thursday";
-        break;
-    
-    case 5 :
-        day = "friday";
-        break; 
+        <!-- 5-Day Forecast -->
+        <div id="forecastContainer" class="hidden mt-8">
+            <h3 class="text-lg font-bold text-blue-800 mb-4">5-Day Forecast</h3>
+            <div id="forecastCards" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+                <!-- Example card structure -->
+                <div class="p-4 bg-white rounded-lg shadow-md flex flex-col items-center">
+                    <!-- Weather Icon -->
+                    <div class="w-16 h-16 flex items-center justify-center bg-gradient-to-r from-blue-300 to-blue-500 rounded-full shadow-md mb-4">
+                        <img class="weather-icon w-10 h-10" alt="Weather Condition" />
+                    </div>
+                    <p class="font-bold text-lg text-gray-800">26.73°C</p>
+                    <p class="text-gray-500">Overcast Clouds</p>
+                    <p class="text-sm text-gray-400">01/12/2024</p>
+                </div>
+            </div>
+        </div>
         
-    case 6 :
-        day = "saturday";
-        break;  
-        
-    default :
-         msg = "please provide vailid day number";     
 
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+script.js
+
+// Constants
+const API_KEY = '58d1f06f5a82b2d8b76936dac7e96291'; // OpenWeatherMap API key
+const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
+const API_FORECAST_URL = 'https://api.openweathermap.org/data/2.5/forecast';
+
+// DOM Elements
+const cityInput = document.getElementById('cityInput');
+const searchButton = document.getElementById('searchButton');
+const weatherContainer = document.getElementById('weatherContainer');
+const forecastContainer = document.getElementById('forecastContainer');
+const recentCities = document.getElementById('recentCities');
+const forecastCards = document.getElementById('forecastCards');
+const cityName = document.getElementById('cityName');
+const temperature = document.getElementById('temperature');
+const conditions = document.getElementById('conditions');
+const humidity = document.getElementById('humidity');
+const wind = document.getElementById('wind');
+
+// Weather Icon - Ensure it's selected correctly
+const weatherIcon = document.querySelector('.weather-icon');
+
+// Event Listeners
+searchButton.addEventListener('click', () => {
+    const city = cityInput.value.trim();
+    if (city) {
+        fetchWeather(city);
+        updateRecentCities(city);
+    } else {
+        alert('Please enter a city name.');
+    }
+});
+
+recentCities.addEventListener('change', (event) => {
+    const city = event.target.value;
+    if (city) fetchWeather(city);
+});
+
+// Fetch Weather Data
+function fetchWeather(city) {
+    const url = `${API_URL}?q=${city}&appid=${API_KEY}&units=metric`;
+    const forecastUrl = `${API_FORECAST_URL}?q=${city}&appid=${API_KEY}&units=metric`;
+
+    // Fetch Current Weather
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('City not found!');
+            }
+            return response.json();
+        })
+        .then(data => displayWeather(data))
+        .catch(error => {
+            console.error('Error fetching weather:', error);
+            alert('City not found! Please check the name and try again.');
+        });
+
+    // Fetch Forecast
+    fetch(forecastUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Forecast data not available!');
+            }
+            return response.json();
+        })
+        .then(data => displayForecast(data.list))
+        .catch(error => console.error('Error fetching forecast:', error));
 }
 
-
-if(msg){
-    console.log("Message: ", msg);
-}else {
-    console.log("the day of the week is :" , day);
+// Display Current Weather
+function displayWeather(data) {
+    weatherContainer.classList.remove('hidden');
+    cityName.textContent = data.name;
+    temperature.textContent = `${data.main.temp}°C`;
+    conditions.textContent = data.weather[0].description;
+    weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    humidity.textContent = `Humidity: ${data.main.humidity}%`;
+    wind.textContent = `Wind Speed: ${data.wind.speed} m/s`;
 }
 
+// Display 5-Day Forecast
+function displayForecast(forecastData) {
+    forecastContainer.classList.remove('hidden');
+    forecastCards.innerHTML = ''; // Clear previous forecast
 
-------------------------------------------------------------------------------------------------------------
+    // Filter data for one forecast per day (3-hour intervals => 8 per day)
+    const filteredData = forecastData.filter((_, index) => index % 8 === 0);
 
-// loops 
-
-
-
-   (value initaialize , stopping condition , increment )
-
-// ----------------------  for loop 
-
-ittreates fixed no of times 
-
-for(i=1; i<=100; i++){
-    console.log(i);
+    filteredData.forEach(day => {
+        const date = new Date(day.dt_txt).toLocaleDateString();
+        const card = `
+            <div class="p-4 bg-blue-100 rounded-md shadow">
+                <p class="font-bold">${date}</p>
+                <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="Weather Icon" class="mx-auto">
+                <p>${day.main.temp}°C</p>
+                <p>${day.weather[0].description}</p>
+            </div>
+        `;
+        forecastCards.innerHTML += card;
+    });
 }
 
-
-// --------------------- for in loop 
-
-for in loop is used whenever we want to itrete throuh keys of an object we use for in loop
-
-const user = { akash : 56,  ramesh : 67,  satish : 67 }
-
-for( key in user){
-    console.log(user[key]);                     // 56 67 67
+// Update Recent Cities
+function updateRecentCities(city) {
+    if (![...recentCities.options].some(option => option.value === city)) {
+        const option = new Option(city, city);
+        recentCities.add(option);
+    }
 }
-
-// --------------------for of loop 
-
-whenevr you want to itreate throuh array 
-
-const fruits = [ "apple" , "banana", "mango"];
-
-for( fruit of fruits){
-    console.log(fruit);                             // 
-}
-
-
-// -----------------  while loop 
-
-while loop : executes code as long as condition is true 
-
-let value = 1
-
-while(value<=10){
-    console.log(value);
-    value++;
-}
-
-// --------------------- do while loop 
-
-do while loop : to run the code atleast once regardless of condition getting true or false 
-
-let value = 1;
-
-do {
-    console.log(value);
-    value++;
-}while( value<= 10);
-
-
-// ---------------------------------------------------------  functions 
-
-
-functions are block of code which perform some specific tasks 
-the encorge code reusibility for similiar kind of tasks 
-
-1)
-
-function hello(){
-    console.log("hello world");
-}
-
-hello();
-
-you can print something using function 
-
-2)
-
-function sum( x,y) {
-    return x + y ;
-   
-}
-
-const result = sum(8,4);
-console.log(result);
-
-you can return something using function which you can use wherever you want :
-
-you write a function with return 
-call that function 
-
-what happens is a function will perform the task and returns the result of the function  to the function call , back and 
-you store that function call result in some variable and print whener you want.
