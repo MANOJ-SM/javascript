@@ -63,12 +63,12 @@ if(isuser){
 }
 
 
-o/p > ok and cancel button will be displayed on the screen and if user click ok then it will return if condition result and if user click cancel then it will return else condition result .
+o/p > ok and cancel button will be displayed on the screen and if user click ok then it will return ,if condition result and if user click cancel then it will return else condition result .
 
 
 -------------------------------------------------------------------------------------------------------
 
-local storage : to store some dat in the browser in key value pair format.
+local storage : to store some data in the browser in key value pair format.
 
 to set item : value pair in local storage we use setitem() method and
 

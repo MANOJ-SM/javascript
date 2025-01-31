@@ -322,14 +322,87 @@
 // }
 
 
-const user = {
-    name : "manu",                                           // properties 
-    city : "sgn",
-    printDetails : function(){                                   // method 
-        console.log(`i am ${this.name} from ${this.city}`);     
-    }
- };
+// const user = {
+//     name : "manu",                                           // properties 
+//     city : "sgn",
+//     printDetails : function(){                                   // method 
+//         console.log(`i am ${this.name} from ${this.city}`);     
+//     }
+//  };
 
-console.log(user.__proto__);
+// console.log(user.__proto__);
 
+
+// const promise = new Promise( (resolve,reject) => {
+
+//     let promiseResult;
+
+//     setTimeout( () => {
+//         promiseResult = true;
+//         if(promiseResult){
+//             resolve("pass")
+//         }else{
+//             reject("fail");
+//         }
+//     },3000);
+// });
+
+// promise.then( result => console.log(result));
+// promise.catch( error => console.log(error));
+
+
+// async  function fetchData(){
+//     try{
+//             const response = await fetch("");
+//             const result = await response.json();
+//             console.log(result);
+
+//     }catch (error ){
+//         console.log(error);
+//     }
+// }
+
+// fetch();
+
+
+// class Customer{
+//     constructor(name,email){
+//         this.name = name;
+//         this.email = email;
+//     }
+
+//     get info(){
+//         return this.name;
+//     }
+
+//     printDetails(){
+//         console.log(`name and email of customer is ${this.name} and ${this.email}`);
+//     }
+// }
+
+// const customer1 = new Customer("jhon","abc@gmail.com");
+// console.log(customer1);
+// console.log(customer1.info);
+
+// customer1.printDetails();
+
+
+// class newCustomer extends Customer{
+//     constructor(name,email,id){
+//         super(name,email);
+//         this.id = id;
+//     }
+
+//     customerid(){
+//         console.log(`this is new customer with id ${this.id}`);
+//     }
+// }
+
+// const customer2 = new newCustomer("jhon","abc@gmail.com","101");
+// customer2.customerid();
+
+localStorage.setItem("name","manoj");
+
+const val = localStorage.getItem("name");
+console.log(val);
 

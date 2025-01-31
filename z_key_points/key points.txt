@@ -328,9 +328,24 @@ asynchronous functions :
 
 setTimeout  : is a function that allows you to delay the execution of a particular piece of code by a specified amount of time.
 
-setTimeout( () => {    
+1. setTimeout( () => {    
     console.log("hello world!");        
 },3000);
+
+-------------------------------
+2. featch : is a function that allows you to make a request to a server and get a response back.
+
+featch is used for an  api call and it returns a promise 
+
+example :
+
+function featchData(){
+  featch("")
+  .then( response => response.json)
+  .then( result => console.log(result))
+}
+
+featchData();
 
 -------------------
 
@@ -367,4 +382,202 @@ function createMessage(name,callback){            // here callback ==  dispayMes
 }
 
 
+Callback Hell  : is  a situation where code becomes deeply nested due to the extensive use of callback functions
+
+reduces readability , error handling and mainteniblity of code .
+
+solution to callback hell : 1) Promises 2) async/await 
+
 ---------------------
+
+promise - is the promise of code execution in future .
+
+
+resolving a promise -  an async task has succfully completed its task and its state changes from pending to either fullfilled or rejected 
+
+if fullfilled then , .then is called orelse .catch is called if rejected .
+
+resolving is necessaruy as it tell js runtime env that async task is completed , and you process further with the result od sync task 
+
+example :
+
+ const promise = new Promise( (resolve,reject) => {
+
+        let promiseResult;
+
+        setTimeout( () => {
+            promiseResult = true;
+            if(promiseResult){
+                resolve("pass")
+            }else{
+                reject("fail");
+            }
+        },3000);
+ });
+
+promise.then( result => console.log(result));
+promise.catch( error => console.log(error));
+
+
+-----------
+Async / Await 
+
+// async and await is used to handle the promise in a synchronous way.
+
+-> makes code look like  synchronous code but still it will be asynchronous in nature
+
+helpful for error handling 
+
+example :
+
+async function feactDataResponse(){
+
+    try {
+        const response = await fetch(" https://dummyjson.com/products/1");
+       const result = await respose.json();
+       console.log(result);
+    } catch( error){
+        console.log(error);
+    }
+}
+
+feactDataResponse();
+
+--------------------------
+
+event loop  and call back queue:
+
+a evnt loop manages the order of sync and async tasks in call satack ,
+once all the sync  tasks are finished and any async task is left out then it sends it web api where timer will be set, once time is done it puts it to a callback queue then pushes it to empty satck for execution 
+
+
+Micro Task queue (API calls and promises goes inside M T queue):
+
+---------------------
+
+1) the value of `this` inside the function is -> 
+    global object in node js  and  window object in browser. 
+
+2) this inside a object -> whole obj
+
+3) this inside a class -> instance of class
+
+4) this inside a arrow function -> global object in node js and window object in browser.
+
+5) this inside a constructor function -> instance of class.
+                     
+
+ ---------------------------
+
+
+ object : an object is a collection of key-value pairs , basically an instance of a class 
+
+ method - any function inside an objt is method
+
+class : its temalate to create objects 
+
+
+--------------------------
+object :
+
+const user = {
+    names : {
+        "fname" : "manu",
+        "lanme" : medleri",
+
+    },             // name , age, printDetails,greet --> properties of object user 
+    age : 23,
+    printDetails : function () {
+        console.log("Details of User");
+    },
+    greet : function(){                           // printDetail & grade -> methods 
+        console.log("greet user")
+    }
+};
+--------------------------------------
+
+class ;
+
+
+
+class Customer{
+    constructor(name,email){
+        this.name = name;
+        this.email = email;
+    }
+
+    get info(){
+        return this.name;
+    }
+
+    printDetails(){
+        console.log(`name and email of customer is ${this.name} and ${this.email}`);
+    }
+}
+
+const customer1 = new Customer("jhon","abc@gmail.com");
+console.log(customer1);
+console.log(customer1.info);
+
+customer1.printDetails();
+
+
+inheritence :
+
+class newCustomer extends Customer{
+    constructor(name,email,id){
+        super(name,email);
+        this.id = id;
+    }
+
+    customerid(){
+        console.log(`this is new customer with id ${this.id}`);
+    }
+}
+
+const customer2 = new newCustomer("jhon","abc@gmail.com","101");
+customer2.customerid();
+-----------------------------------
+
+// 1st js engine - spider monkey used in mozilla firebox
+
+// 2nd js engine - v8 used in google chrome
+
+js engine is program that takes  js code and executes it
+
+
+2.Browser Object Model (BOM) : 
+
+it is a collection of additional objects apart from dpocument object that are available in browser environment.  used to interact with browser and its functionality.
+
+1.alert - used to display a message
+2.prompt - used to get input from user and we can store that input in a variable
+3.confirm - to confirm the action ( like deltion )
+-----------
+
+local storage : to store some data in the browser in key value pair format.
+
+
+
+seesionStorage is similar to localStorage only diffrence is in localStorage the data will be persiist even if the user close the browser but in sessionStorage the data will be deleted when the user close the browser.
+
+also even if user opens the same session in new tab then data in new seesion will not be there, like in the previous session.
+
+
+// setItem()
+
+localStorage.setItem("name","manu");
+
+//  getItem() 
+
+const value = localStorage.getItem("name");
+
+console.log(value);
+
+localStorage.setItem("rollNo","29");
+
+//  removeItem() 
+
+localStorage.removeItem("name");
+
+---------------------------------------------------------------------------------------------

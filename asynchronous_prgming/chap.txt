@@ -365,7 +365,7 @@ function handleFinalResult(finalResult) {
 
 promise - is the promise of code execution in future .
 
-it is the object and  connection blw , producing code and conuming code 
+it is the object and  connection blw , producing code and consuming code 
 
 three states of promise 
 1.pending
@@ -374,7 +374,7 @@ three states of promise
 
 
 Resolving a promise :
-means that the promise has successfully completed its task, and its state changes from "pending" to "fulfilled" (or "resolved").
+means that the promise has successfully completed its task, and its state changes from "pending" to "fulfilled" ( "resolved") or rejected ( failed )
 
 
 Why Resolve a Promise?
@@ -486,7 +486,7 @@ in the mean time , it excutes other code block that comes after promise code and
 
 fetch API :
 
-if the featch successfully featchs the data required ( reovled ) then , .then is called and if there is any error in fetching the data then .catch is called
+if the featch successfully featchs the data required ( resovled ) then , .then is called and if there is any error in fetching the data then .catch is called
 
 
 // featch is used for an  api call 
