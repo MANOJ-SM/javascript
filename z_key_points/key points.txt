@@ -1,7 +1,188 @@
 
 1.template litreal : template litreal is a string created using back tick which helps in string interpolation and multi-line strings.
 
+to use javascript variables logic inside strings we use template litreal 
+
 2.string interpolation is when we substute the placeholders or  embeded expressions in the string  
 using  dollor and a expression within a curly braces  -->   ${expression} */
 
 str.trim() - removes the white spaces [ spaces infront of str  and at the end of str]
+
+3.what is window object ? 
+
+an window object is browsers object and it is automatically created by the browser
+it is basically a global object with lots of properties and methodes 
+  --- used to interact with the browser and the document object model (DOM)
+
+4.  <!-- script.js  are not included at head bcoz DOM elements will not load before body -->
+
+5.web browser converts html document into tree like struture to render the information , this tree like struture is called DOM 
+
+
+// 1. selecting ID        {      document.getElementById(" IDName ")                  }
+// 2. selecting class     {      document.getElementesByClassName("class name")       }
+// 3. selecting tag       {      document.getElementByTagName("tag name")             }
+// 4. query selector      {      document.querySelector("ID,Class,Tag name")          } 
+
+let manoj = document.querySelector("p");
+manoj.innerHTML = "lorem";                                            nner texrt changed 
+
+let student11 = document.getElementById("img1").src = "bird.jpeg";    attribute value changed  
+
+    const para = document.createElement("p");                    new ele creation 
+    para.innerHTML = "manu i am doing well";
+
+    const parent = document.getElementById("parent");        appending it in div(some parent) - last child 
+    parent.appendChild(para);
+
+    const exisitingPara = document.getElementById("oldpara");         making it as 1st child of parent 
+    parent.insertBefore(para,exisitingPara);  
+
+    exisitingPara.remove();
+
+
+###     document.getElementById("box").onmouseover = changeText;         dom event 
+
+        function changeText(){
+            document.getElementById("box").innerHTML = "square";
+        }
+
+DOM event listner --
+
+1.as many tasks can be performed on same ele with same eventListener
+2.as many as  different events can be attached to same ele 
+3.example for setting and removing event listner
+
+document.querySelector("button").addEventListener("click",textChange);
+
+        function textChange(){
+            document.querySelector("p").innerHTML ="manu";
+        }
+
+        document.querySelector("button").addEventListener("dblclick",function (){
+            document.querySelector("button").removeEventListener("click",textChange);
+
+        });
+
+
+events - onclick , onmouseover,onmouseout
+
+// some EventListners 
+
+// mouse - click,dblclick,mouseover
+
+
+
+-----------
+event bubbling - inner event is handled first and then outer event is handled 
+event capturing - outer event is handled first and then inner event is handleds
+
+event bubbling ( default - false - no need to write explicittly)
+
+            document.querySelector("button").addEventListener("dblclick",function (){
+            document.querySelector("button").removeEventListener("click",textChange);
+
+            },false);
+
+event capturing   ( use capture parameter need to be wriiten as true )          
+
+            document.querySelector("button").addEventListener("dblclick",function (){
+            document.querySelector("button").removeEventListener("click",textChange);
+
+            },true);
+
+            -- outer event is handled first and then later inner event will take place 
+
+
+----------------------------------------------
+
+ES6 - ecmaScript 2015 // in 2015 a major revison done to javascript where the lot of new features were introduced .  
+// all the features introuced in ES6 are known as ES6 features 
+
+Let and const
+Arrow functions
+Template literals
+Default parameters
+Promises
+Modules
+Classes
+Destructuring
+
+--------------------
+
+// higher order function : function which takes another function as parameter 
+// call back function : function which is passed as parameter 
+
+
+all methodes are immtable - orginal array dosent get affected 
+
+1.map() - is h o f which transform the each array ele acc the given function and returns the new array 
+
+## mapping each array ele with a function - arr.map(square); , arr -> array , square -> function 
+
+
+const arr = [ 2,3,4,5,6,7,9];
+
+function square(x){
+    return x * x
+}
+
+const squaredArray = arr.map(square);
+console.log(squaredArray);
+
+const sq = arr.map( x => { return x * x} );
+
+2. filter() - travser through array or object and filter out the ele which meets the function condition and return the new array of ele which meets the condition
+
+example:
+
+const marks = [ 23,34,45,56,34,39,67,56,68,];
+
+const goodMarks = marks.filter(mark => mark > 50);
+console.log(goodMarks);
+
+
+3. reduce() - is a hof which takes the array and return the single value by applying the function
+
+example :
+
+const marks = [ 1,2,3,4];
+
+const sum = marks.reduce( (acc,cur) => {
+    acc = acc + cur;
+    return acc;
+},0);
+console.log(sum);
+
+
+all together
+
+
+const arr = [1,2,3,4,5,6];
+
+const new_array = arr.filter( ele =>  {
+    return ele % 2 == 0;                    // 2,4,6
+}).map( ele => {
+    return ele * ele;                       // 4,16,36
+}).reduce( (acc,ele) => {
+    acc = acc + ele;                        // 56
+    return acc;                              
+},0)
+
+console.log(new_array);
+
+----
+
+function sumOfSquarednumbers(numbers){
+    return numbers
+    .filter( ele => ele % 2 == 0)
+    .map(ele => ele*ele)
+    .reduce( (acc,ele) => acc + ele)
+
+}
+
+const numbers = [1,2,3,4,5,6];
+console.log(sumOfSquarednumbers(numbers));
+
+-----------------------------------------------------------------------------
+

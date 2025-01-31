@@ -8,7 +8,7 @@ In non primitive datatypes objects will come : in objects (arrays , fuctions ) w
 
 *An string like "manu" is a string type, &  any array collection is a object type 
 
-*Array : Array is a collection of similar types of elements 
+*Array : Array is a collection  of elements 
 *it uses  square bractes to store the data ,  [ ] 
 *data mayabe anything strings , numbers ,, but both the strings and numbers are not used togther ;
 *strings are immutable whereas array is mutable , using indx no we can change the value  inside an array  

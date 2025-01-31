@@ -10,11 +10,11 @@ it is basically a global object with lots of properties and methodes
   
 what is dom ?
 
-each element in html are converted into objects this object we called as  document and  we can access it in js file 
+web browers convert each element in html into  document object and  we can access it in js file 
 this document is located in window object
 document( model or representation of html)       
 DOM - the methode of accessing html in js 
-used to apply dynamic changes or manipulation in web pages                                   */
+used for dynamic changes or manipulation in web pages                                   */
 
 
 
@@ -32,8 +32,9 @@ document.body.childNodes[1].innerText = "abcd";            // changing the value
 
 
 // 1. selecting ID        {      document.getElementById(" IDName ")                  }
-// 2. selecting class     {      document.getElementesByClassName("class name")             }
+// 2. selecting class     {      document.getElementesByClassName("class name")       }
 // 3. selecting tag       {      document.getElementByTagName("tag name")             }
+// 4. query selector      {      document.querySelector("ID,Class,Tag name")          } 
 
 
 // if the id doesnt exists in html then null will be printed

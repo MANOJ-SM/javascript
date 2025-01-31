@@ -165,7 +165,7 @@ head and body are siblings bcoz they are in same level
 
         // for addEventListner there are 3 parameters : event name , funtion , event capturing and bubbling 
         // with event listner we can add any no of events(click , dblclick ,mouseover etc) to same ele, at a time 
-        // for same ele , with the same event can perform two or more tasks 
+        // for same ele , with the same event can perform two or more tasks ( for p ele , onclick el can be applied as many tasks we want to have )
 
         document.querySelector("p").addEventListener("click",function (){        
             document.querySelector("body").style.backgroundColor ="green";

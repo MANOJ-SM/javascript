@@ -139,6 +139,6 @@ div.addEventListener("mouseover", () =>{
 
 // EventListners 
 
-// mouse - click,dblclick.mouseover
+// mouse - click,dblclick,mouseover
 
 

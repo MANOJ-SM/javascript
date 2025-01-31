@@ -23,13 +23,16 @@ y(x);
 
 //1 map()
 
+
 map function --  higher Order function which is used to transform the contents of array 
 
-map methode works on arrays  and returns the new array , # immutable 
+* works on arrays  and returns the new array , # immutable 
 
-map() transforms each array ele acc to the given function 
+* transforms each array ele acc to the given function 
 
-map() methode is used to create new array with trannsformed array s
+*  used to create new array with trannsformed array
+
+map() - is h o f which transform the each array ele acc the given function and returns the new array 
 
 const arr = [1,2,3,4,5,6];
 
@@ -104,6 +107,7 @@ console.log(eachUser);
 
 //When users.map is called, it passes each object (one at a time) from the users array to the callback function. The parameter user is used to refer to the current object being processed.
 
+-------------------------------------------------------
 
 // 2.filter  -- array methode  # immutable 
 

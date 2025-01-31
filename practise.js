@@ -233,18 +233,80 @@
 // console.log("size is : ", size);
 
 
-let i = 0;
+// let i = 0;
 // while( i<=5){
 //     console.log(i);
 //     i++;
 // }
 
-let student={
-    name : "rahul",
-    age : 25,
-    cgpa :7.5,
-}
+// let student={
+//     name : "rahul",
+//     age : 25,
+//     cgpa :7.5,
+// }
 
-for(let i in student){
-    console.log("key =", i, "&" ,"values =", student[i]);
-}
+// for(let i in student){
+//     console.log("key =", i, "&" ,"values =", student[i]);
+// }
+
+// let student1 = document.getElementById("img1").src = "bird.jpeg";
+
+// let student11 = document.getElementById("img1").src = "bird.jpeg";
+// student11.innerHTML = "<h3> hello new heading added </h3>"
+// let manu = document.getElementsByTagName("p");
+ 
+
+
+// const arr = [ 2,3,4,5,6,7,9];
+
+// function square(x){
+//     return x * x
+// }
+
+// const squaredArray = arr.map(square);
+// console.log(squaredArray);
+
+
+// const sq = arr.map( x => { return x * x} );
+
+// const DoubledArray = arr.map(x => { return 2 * x });          // input => { 
+//     console.log(DoubledArray);
+
+
+// const marks = [ 23,34,45,56,34,39,67,56,68,];
+
+// const goodMarks = marks.filter(mark => mark > 50);
+// console.log(goodMarks);
+
+// const marks = [ 1,2,3,4];
+
+// const sum = marks.reduce( (acc,cur) => {
+//     acc = acc + cur;
+//     return acc;
+// },0);
+// console.log(sum);
+
+
+// const arr = [1,2,3,4,5,6];
+
+// const new_array = arr.filter( ele =>  {
+//     return ele % 2 == 0;                    // 2,4,6
+// }).map( ele => {
+//     return ele * ele;                       // 4,16,36
+// }).reduce( (acc,ele) => {
+//     acc = acc + ele;                        // 56
+//     return acc;                              
+// },0)
+
+// console.log(new_array);
+
+// function sumOfSquarednumbers(numbers){
+//     return numbers
+//     .filter( ele => ele % 2 == 0)
+//     .map(ele => ele*ele)
+//     .reduce( (acc,ele) => acc + ele)
+
+// }
+
+// const numbers = [1,2,3,4,5,6];
+// console.log(sumOfSquarednumbers(numbers));
