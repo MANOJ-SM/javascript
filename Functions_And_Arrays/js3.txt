@@ -24,7 +24,7 @@ once all the lines of the code are executed , all the mmry will be erased
 global execution context all three are poped out one by one after executing thir code 
 
 
-// anonymous function : function without thir own identity  are termed as anonymous function   // synatx error 
+// anonymous function : function without their own identity  are termed as anonymous function   // synatx error 
 
 
 only in function expression / arrow function we can declere anonymous function
@@ -123,7 +123,7 @@ outer();
 inspect > sources > referesh page to start execution add breakpoints see scope for global and local scope 
 
 
-lexical enviornment : mmry of parent  // aslso called closure
+lexical enviornment : mmry of parent  // also called closure
 
 scope chain : it is the chain of scopes thats determines variable access 
 

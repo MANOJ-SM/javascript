@@ -1,15 +1,24 @@
-"use strict"
+// "use strict"
 
-function abc(){
-    console.log("abc");
-    console.log(this);  // global object 
-}
+// function abc(){
+//     console.log("abc");
+//     console.log(this);  // global object 
+// }
 
-abc();  
+// abc();  
 
 
-function manu(){
-    console.log("hi manu !");
-}
+// function manu(){
+//     console.log("hi manu !");
+// }
 
-window.manu();
+// window.manu();
+
+
+const user = {
+    name : "manu",                                           // properties 
+    city : "sgn",
+    printDetails : function(){                                   // method 
+        console.log(`i am ${this.name} from ${this.city}`);     
+    }
+ };

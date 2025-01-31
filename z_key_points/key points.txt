@@ -186,3 +186,185 @@ console.log(sumOfSquarednumbers(numbers));
 
 -----------------------------------------------------------------------------
 
+Global excution context - a G E C consist of two phases for executing the js code 1.memory allocation another is 2.code execution where in memory for all the variables and function is allocated first then afer the code is executed line by line  
+
+and for function another local execution context will be created .
+
+
+call stack : a datastruture that keeps track of function calls 
+
+hoisting - we can access a variable orn function before declare them . ( bcoz of excution context )
+
+variable hosting  - we can access the variable before we declare it 
+
+var a =10;
+console.log(a);
+
+
+function hoisting - we can access the variable before we declare it 
+
+
+greeting();
+
+function greeting(){
+    console.log("dsAF");                 / o/p -> dsAF
+}
+
+
+arrow function / first expression :
+
+const greeting = () => {
+  console.log("hello");                / o/p -> undefined 
+}
+
+------------------------
+
+anonymous function : function without their own identity  are termed as anonymous function
+
+ex: arrow functions :
+let a = () => {
+    console.log("3");
+}
+-------------------------
+
+// Named Function Expression 
+
+let a = function manu() {
+    console.log("3");
+}
+
+a();        // 3
+
+manu();  //referenceError : manu is not defined ;
+
+----------------
+
+// self calling or immediately calling functions   // practice 
+
+(function person(){
+    console.log("manu");
+}) ();
+
+
+-----------------------------------
+
+lexical env : a mmry which points to its parent mmry is called as lex env  , and this is how we can access the parent scope from child scop
+
+every mmry phase in execution context will have its own  lexical env poiniting to its parent mmry
+
+lex of gobal execution context is null 
+
+scope chain : checking for a variable in lexical_env of parent until its not found , if not found it returns null
+
+closure : a function along with its lexical_env is called closure .
+
+temporal dead zone: the variable declred using let and const will be allocated with mmry but cant be accessed until the value is initailaized  is called   "let and const temporal dead zone" 
+
+-------------------
+
+data struture : 
+
+A data structure is a way of organizing and storing data in a computer so that it can be accessed and modified efficiently.  
+
+oop : representing the essential features of the object 
+
+array : can stores the multiple values in one variable of differnt data type , and is mutable 
+
+string : stores sequence of char  in dbl quts 
+
+
+-------------------
+
+Attributes:
+Attributes provide additional information about an HTML element
+
+Tags:
+Tags are the keywords enclosed within angle brackets (e.g., <p>, <h1>, <img>, <div>).
+
+
+--------------------------
+prototype:
+every js object has  some special property  attached with it called prototype
+
+## helpul if we dont have prpty inside the object but we can still have special prptoies which are present inside prototype
+
+const user = {
+   name : "manu",                                           // properties 
+   city : "sgn",
+   printDetails : function(){                                   // method 
+       console.log(`i am ${this.name} from ${this.city}`);     
+   }
+};
+
+array also prototype attached with it 
+
+to get the prototype of any object we use
+
+object.__proto__
+
+prototype of object.prototype (last node) is null 
+
+object.__proto__.__proto__
+
+prototype chain - js tries to find the property in the object itself first then in its prototype then in its prototype's prototype and so on
+
+
+----------------------
+synchronous prmigng - prgming in which code is executed line by line code sequentialy.
+
+js is synchronous language but in case of any use of callback , promises or event loops it will behave as asynchronous ;
+
+asynchronous progming : Asynchronous programming is a programming that allows tasks to run concurrently without waiting for other tasks to complete 
+
+some asynchronous tasks 
+ 
+1.callback
+2.promises
+3.async/await
+
+
+----------------
+asynchronous functions :
+
+setTimeout  : is a function that allows you to delay the execution of a particular piece of code by a specified amount of time.
+
+setTimeout( () => {    
+    console.log("hello world!");        
+},3000);
+
+-------------------
+
+// normal callback function  : 
+
+
+function createMessage(name, callback) {
+    const message = `hello ${name}`;
+    callback(message);                      // invokes the callback function  with the created message
+}
+
+function displayMessage(message) {
+    console.log(message);
+}
+
+// Pass `displayMessage` as a callback to `createMessage`
+
+createMessage('manu', displayMessage);
+
+### why callback function is used ?
+
+// when i want to call  a function only after my previous  function has completed its execution . then i will use 
+callback  function .
+
+with setTimeout ---
+
+function createMessage(name,callback){            // here callback ==  dispayMessage()
+
+    setTimeout(() => {
+        const message = `hello ${name}`;
+        callback(message);
+    },3000);
+
+}
+
+
+---------------------

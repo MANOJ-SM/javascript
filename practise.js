@@ -310,3 +310,26 @@
 
 // const numbers = [1,2,3,4,5,6];
 // console.log(sumOfSquarednumbers(numbers));
+
+// var a =10;
+// console.log(a);
+
+
+// greeting();
+
+// function greeting(){
+//     console.log("dsAF");
+// }
+
+
+const user = {
+    name : "manu",                                           // properties 
+    city : "sgn",
+    printDetails : function(){                                   // method 
+        console.log(`i am ${this.name} from ${this.city}`);     
+    }
+ };
+
+console.log(user.__proto__);
+
+
